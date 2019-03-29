@@ -45,8 +45,8 @@ const StateContext = React.createContext<IContext>({} as IContext);
 class StateContainer extends React.PureComponent<{}, IState> {
   state = {
     todos: initialTodos,
-    trancheAdd: 0,
-    tauxAdd: 0
+    trancheAdd: 150000,
+    tauxAdd: 10
   };
 
 
@@ -69,20 +69,33 @@ class StateContainer extends React.PureComponent<{}, IState> {
         tranche: this.state.trancheAdd,
         taux: this.state.tauxAdd
       };
-      
-      var sortedTodo: ITodo[] = [todo, ...prevState.todos]
+      console.log("coucou")      
+      var entryOk = true;
+      //we fist check if the entry is valid
+      for (let olddo  of prevState.todos){
+        if (olddo.tranche > todo.tranche && olddo.taux < todo.taux) {entryOk = false};
+        if (olddo.tranche < todo.tranche && olddo.taux > todo.taux) {entryOk = false};
+      }
+      var sortedTodo: ITodo[] = prevState.todos
+      if (entryOk) {
+      sortedTodo = [todo, ...prevState.todos]
       sortedTodo.sort((leftSide, rightSide): number => {
           if (leftSide.tranche < rightSide.tranche) return -1;
           if (leftSide.tranche > rightSide.tranche) return 1;
           return 0;
           });
-           
+      }     
       
+      if (entryOk) {  
       return {
         todos: sortedTodo,
         trancheAdd: 0,
-        tauxAdd: 0
-      };
+        tauxAdd: 0}
+      } else {
+       return {todos: prevState.todos,
+        trancheAdd: 0,
+        tauxAdd: 0}
+        };       
     });
   };
 
