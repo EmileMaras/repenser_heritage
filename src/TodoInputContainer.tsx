@@ -7,7 +7,7 @@ export default () => (
   <StateConsumer>
     {({ state, actions }) => (
       <TodoInput
-        tranche={state.entryAdd}
+        tranche={state.trancheAdd}
         handleChange={actions.changeAddEntry}
         handleSubmit={actions.addTodo}
       />

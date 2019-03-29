@@ -12,7 +12,7 @@ const TodoInput: React.SFC<IProps> = props => (
       type="number"
       value={props.tranche}
       onChange={e => props.handleChange(e.target.valueAsNumber)}
-    />
+    />      
     <button onClick={props.handleSubmit}>Add</button>
   </div>
 );

@@ -2,14 +2,14 @@ import * as React from "react";
 import produce from "immer";
 
 import { ITodo } from "./types";
-
+ 
 // Define the shape of the state. It might be more convenient to embed
 // the 'completed' state inside the Todo interface. However, this way it allows
 // for demonstration of a map in the state together with a selector to merge
 // the data.
 interface IState {
   todos: ITodo[];
-  entryAdd: number;
+  trancheAdd: number;
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -25,10 +25,10 @@ interface IContext {
 }
 
 const initialTodos = [
-  { id: 1, tranche: 100000 },
-  { id: 2, tranche: 250000},
-  { id: 3, tranche: 500000},
-  { id: 4, tranche: 750000}
+  { id: 1, tranche: 100000, taux: 0 },
+  { id: 2, tranche: 250000, taux: 20},
+  { id: 3, tranche: 500000, taux: 40},
+  { id: 4, tranche: 750000, taux: 60}
 ];
 
 // Calculate the last ID in the todoList for use in generating new IDs.
@@ -43,7 +43,7 @@ const StateContext = React.createContext<IContext>({} as IContext);
 class StateContainer extends React.PureComponent<{}, IState> {
   state = {
     todos: initialTodos,
-    entryAdd: 0
+    trancheAdd: 0
   };
 
 
@@ -63,7 +63,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
     this.setState(prevState => {
       const todo: ITodo = {
         id: nextId++,
-        tranche: this.state.entryAdd
+        tranche: this.state.trancheAdd,
+        taux: 0
       };
       
       var sortedTodo: ITodo[] = [todo, ...prevState.todos]
@@ -76,13 +77,13 @@ class StateContainer extends React.PureComponent<{}, IState> {
       
       return {
         todos: sortedTodo,
-        entryAdd: 0
+        trancheAdd: 0
       };
     });
   };
 
   changeAddEntry = (tranche: number) => {
-    this.setState({ entryAdd: tranche });
+    this.setState({ trancheAdd: tranche });
   };
 
   render() {
