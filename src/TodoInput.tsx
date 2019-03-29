@@ -9,11 +9,10 @@ interface IProps {
 }
 
 const TodoInput: React.SFC<IProps> = props => (
-    <form>
+    <div>
     <label>Tranche</label>
     <input
       type="number"
-      name="tranche"
       step="10000"
       value={props.tranche}
       onChange={e => props.handleChange(e.target.valueAsNumber)}
@@ -21,7 +20,6 @@ const TodoInput: React.SFC<IProps> = props => (
     <label>Taux</label>
     <input
       type="number"
-      name="taux"
       min="0"
       max="100"
       step="5"
@@ -29,7 +27,9 @@ const TodoInput: React.SFC<IProps> = props => (
       onChange={e => props.handleChangeTaux(e.target.valueAsNumber)}
     />                 
     <button onClick={props.handleSubmit}>Ajouter</button>
-    </form>
+    </div>
+    
+
 );
 
 export default TodoInput;
