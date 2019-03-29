@@ -8,7 +8,9 @@ export default () => (
     {({ state, actions }) => (
       <TodoInput
         tranche={state.trancheAdd}
+        taux={state.tauxAdd}
         handleChange={actions.changeAddEntry}
+        handleChangeTaux={actions.changeAddTaux}
         handleSubmit={actions.addTodo}
       />
     )}

@@ -10,6 +10,7 @@ import { ITodo } from "./types";
 interface IState {
   todos: ITodo[];
   trancheAdd: number;
+  tauxAdd: number;
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -19,6 +20,7 @@ interface IContext {
   state: IState;
   actions: {
     changeAddEntry: (tranche: number) => void;
+    changeAddTaux: (taux: number) => void;      
     addTodo: () => void;
     deleteTodo: (id: number) => void;
   };
@@ -43,7 +45,8 @@ const StateContext = React.createContext<IContext>({} as IContext);
 class StateContainer extends React.PureComponent<{}, IState> {
   state = {
     todos: initialTodos,
-    trancheAdd: 0
+    trancheAdd: 0,
+    tauxAdd: 0
   };
 
 
@@ -64,7 +67,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
       const todo: ITodo = {
         id: nextId++,
         tranche: this.state.trancheAdd,
-        taux: 0
+        taux: this.state.tauxAdd
       };
       
       var sortedTodo: ITodo[] = [todo, ...prevState.todos]
@@ -77,7 +80,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
       
       return {
         todos: sortedTodo,
-        trancheAdd: 0
+        trancheAdd: 0,
+        tauxAdd: 0
       };
     });
   };
@@ -86,6 +90,11 @@ class StateContainer extends React.PureComponent<{}, IState> {
     this.setState({ trancheAdd: tranche });
   };
 
+  changeAddTaux = (taux: number) => {
+    this.setState({ tauxAdd: taux });
+  };
+    
+    
   render() {
     // Build the context object with the cotainer state and all the
     // implementations of the selectors and actions.
@@ -94,7 +103,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
       actions: {
         deleteTodo: this.deleteTodo,
         addTodo: this.addTodo,
-        changeAddEntry: this.changeAddEntry
+        changeAddEntry: this.changeAddEntry,
+        changeAddTaux: this.changeAddTaux
       }
     };
 
