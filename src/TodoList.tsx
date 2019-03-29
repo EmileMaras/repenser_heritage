@@ -13,8 +13,9 @@ const TodoList: React.SFC<IProps> = props => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Job</th>
+            <th>Tranches</th>
+            <th>Taux</th>
+            <th>Enlever</th>
           </tr>
         </thead>
         <tbody>        
