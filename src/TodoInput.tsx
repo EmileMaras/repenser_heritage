@@ -6,6 +6,7 @@ interface IProps {
   handleChange: (tranche: number) => void;
   handleChangeTaux: (taux: number) => void;
   handleSubmit: () => void;
+  errormessage: string;
 }
 
 const TodoInput: React.SFC<IProps> = props => (
@@ -27,6 +28,7 @@ const TodoInput: React.SFC<IProps> = props => (
       onChange={e => props.handleChangeTaux(e.target.valueAsNumber)}
     />                 
     <button onClick={props.handleSubmit}>Ajouter</button>
+    <div>{props.errormessage}</div>
     </div>
     
 

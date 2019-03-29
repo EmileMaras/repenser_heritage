@@ -11,6 +11,7 @@ interface IState {
   todos: ITodo[];
   trancheAdd: number;
   tauxAdd: number;
+  errormessage: string;
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -45,8 +46,9 @@ const StateContext = React.createContext<IContext>({} as IContext);
 class StateContainer extends React.PureComponent<{}, IState> {
   state = {
     todos: initialTodos,
-    trancheAdd: 150000,
-    tauxAdd: 10
+    trancheAdd: 0,
+    tauxAdd: 0,
+    errormessage: ""
   };
 
 
@@ -67,14 +69,23 @@ class StateContainer extends React.PureComponent<{}, IState> {
       const todo: ITodo = {
         id: nextId++,
         tranche: this.state.trancheAdd,
-        taux: this.state.tauxAdd
+        taux: this.state.tauxAdd,
       };
       console.log("coucou")      
       var entryOk = true;
+      var errormessageloc = ""
       //we fist check if the entry is valid
       for (let olddo  of prevState.todos){
-        if (olddo.tranche > todo.tranche && olddo.taux < todo.taux) {entryOk = false};
-        if (olddo.tranche < todo.tranche && olddo.taux > todo.taux) {entryOk = false};
+        if (olddo.taux === todo.taux) {entryOk = false;
+                                       errormessageloc = "il ne peut pas y avoir deux taux égaux"}
+        if (olddo.tranche === todo.tranche) {entryOk = false;
+                                             errormessageloc = "il ne peut pas y avoir deux limites de tranche égales"}
+        if (olddo.tranche > todo.tranche && olddo.taux < todo.taux) 
+            {entryOk = false;
+             errormessageloc = "le taux doit croitre avec les tranche"};
+        if (olddo.tranche < todo.tranche && olddo.taux > todo.taux) 
+            {entryOk = false;
+             errormessageloc = "le taux doit croitre avec les tranche"};
       }
       var sortedTodo: ITodo[] = prevState.todos
       if (entryOk) {
@@ -90,11 +101,13 @@ class StateContainer extends React.PureComponent<{}, IState> {
       return {
         todos: sortedTodo,
         trancheAdd: 0,
-        tauxAdd: 0}
+        tauxAdd: 0,
+        errormessage: ""}
       } else {
        return {todos: prevState.todos,
         trancheAdd: 0,
-        tauxAdd: 0}
+        tauxAdd: 0,
+        errormessage: errormessageloc}
         };       
     });
   };

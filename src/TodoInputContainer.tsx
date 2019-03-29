@@ -12,6 +12,7 @@ export default () => (
         handleChange={actions.changeAddEntry}
         handleChangeTaux={actions.changeAddTaux}
         handleSubmit={actions.addTodo}
+        errormessage={state.errormessage}
       />
     )}
   </StateConsumer>
