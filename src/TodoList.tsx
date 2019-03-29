@@ -9,7 +9,7 @@ interface IProps {
 
 const TodoList: React.SFC<IProps> = props => {
   return (
-    <div>
+    <div className="half-container">
       <table>
         <thead>
           <tr>

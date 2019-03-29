@@ -48,7 +48,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
     todos: initialTodos,
     trancheAdd: 0,
     tauxAdd: 0,
-    errormessage: ""
+    errormessage: " "
   };
 
 
@@ -73,7 +73,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
       };
       console.log("coucou")      
       var entryOk = true;
-      var errormessageloc = ""
+      var errormessageloc = " "
       //we fist check if the entry is valid
       for (let olddo  of prevState.todos){
         if (olddo.taux === todo.taux) {entryOk = false;

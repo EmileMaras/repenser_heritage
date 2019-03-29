@@ -560,8 +560,8 @@ a.full-button {
   background: transparent;
   margin-bottom: .5rem;
   font-size: 1rem;
-  width: 40%;
-  max-width: 40%;
+  width: 80%;
+  max-width: 80%;
   line-height: 1; }
 
 [type=color]:hover, [type=date]:hover, [type=datetime]:hover, [type=datetime-local]:hover, [type=email]:hover, [type=month]:hover, [type=number]:hover, [type=password]:hover, [type=search]:hover, [type=tel]:hover, [type=text]:hover, [type=url]:hover, [type=week]:hover, [type=time]:hover, select:hover, textarea:hover {
@@ -633,8 +633,9 @@ textarea.has-error:active {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  width: 35%;
-  max-width: 30%; }
+  width: 90%;
+  max-width: 90%;
+  table-layout: fixed; }
 
 thead th {
   border-bottom: 2px solid #dedede; }
@@ -647,7 +648,7 @@ td {
 
 th,
 td {
-  text-align: right;
+  text-align: left;
   padding: .1rem; }
 
 caption {

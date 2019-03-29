@@ -11,20 +11,25 @@ interface IProps {
 
 const TodoInput: React.SFC<IProps> = props => (
     <div className="half-container">
-     
-            
-        <div className="flex-row">
-            <div className="flex-large">
-            <label>Limite haute de la tranche (€)</label>
+        <table>
+          <thead>
+          <tr>
+            <th>Limite haute tranche (€)</th>
+            <th>Taux (%)</th>
+
+          </tr>
+        </thead>
+        <tbody>        
+        <tr>            
+          <td>
             <input
               type="number"
               step="10000"
               value={props.tranche}
               onChange={e => props.handleChange(e.target.valueAsNumber)}
             />
-            </div>
-            <div className="flex-large">
-            <label>Taux</label>
+           </td>
+           <td> 
             <input
               type="number"
               min="0"
@@ -33,11 +38,13 @@ const TodoInput: React.SFC<IProps> = props => (
               value={props.taux}
               onChange={e => props.handleChangeTaux(e.target.valueAsNumber)}
             />
-            </div>
-        </div>    
-        <div className="text-center">            
-            <button onClick={props.handleSubmit}>Ajouter</button>
-        </div>
+           </td>
+           <td>
+                        <button onClick={props.handleSubmit}>Ajouter</button>
+           </td>
+        </tr>
+        </tbody>
+        </table>
         <div>{props.errormessage}</div>
     </div>
     
