@@ -327,6 +327,10 @@ dd {
   max-width: 100%;
   padding: 0 1rem; }
 
+.half-container {
+  max-width: 50%;
+  padding: 0 1rem; }
+  
 .container, .small-container, .medium-container {
   max-width: 1200px;
   padding: 0 1rem;
@@ -354,8 +358,8 @@ dd {
   padding-right: 1rem; }
 
 .flex-row {
-  margin-left: -1rem;
-  margin-right: -1rem; }
+  margin-left: 1rem;
+  margin-right: 1rem; }
 
 .flex-row {
   display: flex;
@@ -556,8 +560,8 @@ a.full-button {
   background: transparent;
   margin-bottom: .5rem;
   font-size: 1rem;
-  width: 10%;
-  max-width: 10%;
+  width: 40%;
+  max-width: 40%;
   line-height: 1; }
 
 [type=color]:hover, [type=date]:hover, [type=datetime]:hover, [type=datetime-local]:hover, [type=email]:hover, [type=month]:hover, [type=number]:hover, [type=password]:hover, [type=search]:hover, [type=tel]:hover, [type=text]:hover, [type=url]:hover, [type=week]:hover, [type=time]:hover, select:hover, textarea:hover {
@@ -568,7 +572,7 @@ a.full-button {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px #8cbcfe; }
 
 textarea {
-  overflow: auto;
+  overfow: auto;
   height: auto; }
 
 fieldset {
