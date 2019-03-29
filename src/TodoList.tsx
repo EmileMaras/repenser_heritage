@@ -10,18 +10,27 @@ interface IProps {
 const TodoList: React.SFC<IProps> = props => {
   return (
     <div>
-      <ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Job</th>
+          </tr>
+        </thead>
+        <tbody>        
         {props.todos.map(todo => (
-          <li key={todo.id}>
-            {todo.tranche}
-            {"       "}
-            {todo.taux}
-            <button type="button" onClick={() => props.handleDelete(todo.id)}>
-              Delete
-            </button>
-          </li>
+            <tr key={todo.id}>
+                <td>{todo.tranche}</td>
+                <td>{todo.taux}</td>
+                <td> 
+                    <button type="button" onClick={() => props.handleDelete(todo.id)}>
+                    Delete
+                    </button>
+                </td>
+            </tr>          
         ))}
-      </ul>
+        </tbody>
+      </table>
     </div>
   );
 };
