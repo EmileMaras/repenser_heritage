@@ -6,7 +6,6 @@ import TodoInputContainer from './TodoInputContainer';
 
 export default () => (
   <div>
-    Todo list:
     <TodoInputContainer />
     <TodoListContainer />
     Internal state:

@@ -14,6 +14,7 @@ const TodoInput: React.SFC<IProps> = props => (
     <input
       type="number"
       name="tranche"
+      step="10000"
       value={props.tranche}
       onChange={e => props.handleChange(e.target.valueAsNumber)}
     /> 
@@ -21,10 +22,13 @@ const TodoInput: React.SFC<IProps> = props => (
     <input
       type="number"
       name="taux"
+      min="0"
+      max="100"
+      step="5"
       value={props.taux}
       onChange={e => props.handleChangeTaux(e.target.valueAsNumber)}
     />                 
-    <button onClick={props.handleSubmit}>Add</button>
+    <button onClick={props.handleSubmit}>Ajouter</button>
     </form>
 );
 
