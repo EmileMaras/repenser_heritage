@@ -1,10 +1,9 @@
 import * as React from "react";
 
-import { ITodoWithCompleted } from "./types";
+import { ITodo } from "./types";
 
 interface IProps {
-  todos: ITodoWithCompleted[];
-  handleTick: (id: number) => void;
+  todos: ITodo[];
   handleDelete: (id: number) => void;
 }
 
@@ -14,11 +13,6 @@ const TodoList: React.SFC<IProps> = props => {
       <ul>
         {props.todos.map(todo => (
           <li key={todo.id}>
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => props.handleTick(todo.id)}
-            />
             {todo.text}
             <button type="button" onClick={() => props.handleDelete(todo.id)}>
               Delete

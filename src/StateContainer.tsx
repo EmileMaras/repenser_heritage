@@ -1,7 +1,7 @@
 import * as React from "react";
 import produce from "immer";
 
-import { ITodo, ITodoWithCompleted } from "./types";
+import { ITodo } from "./types";
 
 // Define the shape of the state. It might be more convenient to embed
 // the 'completed' state inside the Todo interface. However, this way it allows
@@ -9,9 +9,6 @@ import { ITodo, ITodoWithCompleted } from "./types";
 // the data.
 interface IState {
   todos: ITodo[];
-  completed: {
-    [id: number]: boolean;
-  };
   textAdd: string;
 }
 
@@ -20,14 +17,10 @@ interface IState {
 // to provide encapsulated getters and setters.
 interface IContext {
   state: IState;
-  selectors: {
-    getTodosWithCompleted: () => ITodoWithCompleted[];
-  };
   actions: {
     changeAddText: (text: string) => void;
     addTodo: () => void;
     deleteTodo: (id: number) => void;
-    toggleCompleted: (id: number) => void;
   };
 }
 
@@ -41,11 +34,6 @@ const initialTodos = [
 // Calculate the last ID in the todoList for use in generating new IDs.
 let nextId = Math.max(...initialTodos.map(t => t.id)) + 1;
 
-// Todo 1 and 4 are marked as 'completed' initially.
-const initialCompleted = {
-  1: true,
-  4: true
-};
 
 // Create a React Context. Use an empty object as a default value, since
 // the intent is to only use the Provider in the StateContainer. Cast
@@ -55,26 +43,9 @@ const StateContext = React.createContext<IContext>({} as IContext);
 class StateContainer extends React.PureComponent<{}, IState> {
   state = {
     todos: initialTodos,
-    completed: initialCompleted,
     textAdd: ""
   };
 
-  getTodosWithCompleted = () => {
-    // This selector merges the todos array with the 'completed' map.
-    return this.state.todos.map(todo => ({
-      ...todo,
-      completed: this.state.completed[todo.id] || false
-    }));
-  };
-
-  toggleCompleted = (id: number) => {
-    // Use immer's produce for an immutable state update.
-    this.setState(
-      produce<IState>(state => {
-        state.completed[id] = !state.completed[id] || false;
-      })
-    );
-  };
 
   deleteTodo = (id: number) => {
     // Use immer's produce for an immutable state update.
@@ -82,7 +53,6 @@ class StateContainer extends React.PureComponent<{}, IState> {
       produce<IState>(state => {
         const index = state.todos.findIndex(todo => todo.id === id);
         state.todos.splice(index, 1);
-        delete state.completed[id];
       })
     );
   };
@@ -112,12 +82,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
     // implementations of the selectors and actions.
     const context = {
       state: this.state,
-      selectors: {
-        getTodosWithCompleted: this.getTodosWithCompleted
-      },
       actions: {
         deleteTodo: this.deleteTodo,
-        toggleCompleted: this.toggleCompleted,
         addTodo: this.addTodo,
         changeAddText: this.changeAddText
       }

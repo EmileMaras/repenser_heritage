@@ -3,6 +3,3 @@ export interface ITodo {
   text: string;
 }
 
-export interface ITodoWithCompleted extends ITodo {
-  completed: boolean;
-}

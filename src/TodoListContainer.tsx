@@ -5,10 +5,9 @@ import TodoList from "./TodoList";
 
 export default () => (
   <StateConsumer>
-    {({ selectors, actions }) => (
+    {({state,  actions }) => (
       <TodoList
-        todos={selectors.getTodosWithCompleted()}
-        handleTick={actions.toggleCompleted}
+        todos={state.todos}
         handleDelete={actions.deleteTodo}
       />
     )}
