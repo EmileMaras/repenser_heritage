@@ -1,17 +1,17 @@
 import * as React from "react";
 
 interface IProps {
-  text: string;
-  handleChange: (text: string) => void;
+  tranche: number;
+  handleChange: (tranche: number) => void;
   handleSubmit: () => void;
 }
 
 const TodoInput: React.SFC<IProps> = props => (
   <div>
     <input
-      type="text"
-      value={props.text}
-      onChange={e => props.handleChange(e.target.value)}
+      type="number"
+      value={props.tranche}
+      onChange={e => props.handleChange(e.target.valueAsNumber)}
     />
     <button onClick={props.handleSubmit}>Add</button>
   </div>

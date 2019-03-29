@@ -9,7 +9,7 @@ import { ITodo } from "./types";
 // the data.
 interface IState {
   todos: ITodo[];
-  textAdd: string;
+  entryAdd: number;
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -18,17 +18,17 @@ interface IState {
 interface IContext {
   state: IState;
   actions: {
-    changeAddText: (text: string) => void;
+    changeAddEntry: (tranche: number) => void;
     addTodo: () => void;
     deleteTodo: (id: number) => void;
   };
 }
 
 const initialTodos = [
-  { id: 1, text: "Do the laundry" },
-  { id: 2, text: "Dance around the room" },
-  { id: 3, text: "Buy a motorbike" },
-  { id: 4, text: "Jump on the couch" }
+  { id: 1, tranche: 100000 },
+  { id: 2, tranche: 250000},
+  { id: 3, tranche: 500000},
+  { id: 4, tranche: 750000}
 ];
 
 // Calculate the last ID in the todoList for use in generating new IDs.
@@ -43,7 +43,7 @@ const StateContext = React.createContext<IContext>({} as IContext);
 class StateContainer extends React.PureComponent<{}, IState> {
   state = {
     todos: initialTodos,
-    textAdd: ""
+    entryAdd: 0
   };
 
 
@@ -63,18 +63,26 @@ class StateContainer extends React.PureComponent<{}, IState> {
     this.setState(prevState => {
       const todo: ITodo = {
         id: nextId++,
-        text: this.state.textAdd
+        tranche: this.state.entryAdd
       };
-
+      
+      var sortedTodo: ITodo[] = [todo, ...prevState.todos]
+      sortedTodo.sort((leftSide, rightSide): number => {
+          if (leftSide.tranche < rightSide.tranche) return -1;
+          if (leftSide.tranche > rightSide.tranche) return 1;
+          return 0;
+          });
+           
+      
       return {
-        todos: [todo, ...prevState.todos],
-        textAdd: ""
+        todos: sortedTodo,
+        entryAdd: 0
       };
     });
   };
 
-  changeAddText = (text: string) => {
-    this.setState({ textAdd: text });
+  changeAddEntry = (tranche: number) => {
+    this.setState({ entryAdd: tranche });
   };
 
   render() {
@@ -85,7 +93,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
       actions: {
         deleteTodo: this.deleteTodo,
         addTodo: this.addTodo,
-        changeAddText: this.changeAddText
+        changeAddEntry: this.changeAddEntry
       }
     };
 

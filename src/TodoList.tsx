@@ -13,7 +13,7 @@ const TodoList: React.SFC<IProps> = props => {
       <ul>
         {props.todos.map(todo => (
           <li key={todo.id}>
-            {todo.text}
+            {todo.tranche}
             <button type="button" onClick={() => props.handleDelete(todo.id)}>
               Delete
             </button>
