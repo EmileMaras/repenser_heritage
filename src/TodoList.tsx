@@ -3,17 +3,17 @@ import Figure from './Figure';
 import { ITodo } from "./types";
 
 export interface IProps {
-  todos: ITodo[];
+  todos: Array<ITodo>;
   handleDelete: (id: number) => void;
 }
 
 export interface ITodos{
-    todos: ITodo[];  
+    todoData: Array<ITodo>;  
 }
 
 const TodoList: React.SFC<IProps> = props => {
-   var todosToSend: ITodos ;
-   todosToSend= {todos: props.todos};
+   //var todosToSend: ITodos ;
+   //todosToSend= {todoData: props.todos};
    return (
     <div className="half-container">
       <table>
@@ -38,7 +38,7 @@ const TodoList: React.SFC<IProps> = props => {
         ))}
         </tbody>
       </table>
-      <Figure todoData={todosToSend}/>
+      <Figure todoData={props.todos}/>
     </div>
   );
 };
