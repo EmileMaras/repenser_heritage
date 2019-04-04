@@ -11,11 +11,11 @@ const TodoList: React.SFC<IProps> = props => {
    //var todosToSend: ITodos ;
    //todosToSend= {todoData: props.todos};
    return (
-    <div className="half-container">
+    <div >
       <table>
         <thead>
           <tr>
-            <th>Limite haute tranches (€)</th>
+            <th>Fin tranche (€)</th>
             <th>Taux (%)</th>
             <th>Enlever</th>
           </tr>
@@ -27,7 +27,7 @@ const TodoList: React.SFC<IProps> = props => {
                 <td>{todo.taux}</td>
                 <td> 
                     <button type="button" onClick={() => props.handleDelete(todo.id)}>
-                    Delete
+                    Enlever
                     </button>
                 </td>
             </tr>          

@@ -10,11 +10,11 @@ interface IProps {
 }
 
 const TodoInput: React.SFC<IProps> = props => (
-    <div className="half-container">
+    <div>
         <table>
           <thead>
           <tr>
-            <th>Limite haute tranche (€)</th>
+            <th>Fin tranche (€)</th>
             <th>Taux (%)</th>
 
           </tr>

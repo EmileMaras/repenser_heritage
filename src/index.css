@@ -330,6 +330,12 @@ dd {
 .half-container {
   max-width: 50%;
   padding: 0 1rem; }
+
+.third-container {
+  max-width: 33%;
+  padding: 0 1rem; 
+  border: 1px solid #0366EE;}
+
   
 .container, .small-container, .medium-container {
   max-width: 1200px;
@@ -484,7 +490,7 @@ dd {
   color: #ffffff;
   font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 0.7rem;
   text-transform: none;
   padding: .75rem 1.25rem;
   margin: 0 0 .5rem 0;
@@ -492,7 +498,7 @@ dd {
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-  line-height: 1; }
+  line-height: 0.7; }
 
 .button:hover, a.button:hover, button:hover, [type=submit]:hover, [type=reset]:hover, [type=button]:hover {
   border: 1px solid #0250bc;

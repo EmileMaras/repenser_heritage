@@ -22,11 +22,14 @@ class Figure extends React.Component<ITodos , {}> {
             x: xvalue,
             y: yvalue,
             type: 'scatter',
-            mode: 'lines+markers',
+            mode: 'lines',
             marker: {color: 'red'},
           }
         ]}
-        layout={{width: 320, height: 240, title: 'A Fancy Plot'}}
+        style={{ width: '100%', height: '40%' }}
+        layout={{
+              autosize: true, title: 'Taux de mutualisation'
+            }}
       />
     );
   }

@@ -6,7 +6,10 @@ import TodoInputContainer from './TodoInputContainer';
 import Figure from './Figure';
 
 export default () => (
-  <div>
+  <div className="third-container">
+    <h2>
+    Choisissez les taux de mutualisation
+    </h2>
     <TodoInputContainer />
     <TodoListContainer />
     <StateConsumer>
