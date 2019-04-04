@@ -1,7 +1,10 @@
 import * as React from "react";
 import Plot from 'react-plotly.js';
-import { ITodos } from './TodoList';
+import { ITodo } from './types';
 
+export interface ITodos{
+    todoData: Array<ITodo>
+}
 class Figure extends React.Component<ITodos , {}> {
 
       

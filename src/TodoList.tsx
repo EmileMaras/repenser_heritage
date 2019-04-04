@@ -1,5 +1,4 @@
 import * as React from "react";
-import Figure from './Figure';
 import { ITodo } from "./types";
 
 export interface IProps {
@@ -7,9 +6,6 @@ export interface IProps {
   handleDelete: (id: number) => void;
 }
 
-export interface ITodos{
-    todoData: Array<ITodo>;  
-}
 
 const TodoList: React.SFC<IProps> = props => {
    //var todosToSend: ITodos ;
@@ -38,7 +34,7 @@ const TodoList: React.SFC<IProps> = props => {
         ))}
         </tbody>
       </table>
-      <Figure todoData={props.todos}/>
+
     </div>
   );
 };
