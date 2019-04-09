@@ -28,10 +28,11 @@ interface IContext {
 }
 
 const initialTodos = [
-  { id: 1, tranche: 100000, taux: 0 },
-  { id: 2, tranche: 250000, taux: 20},
-  { id: 3, tranche: 500000, taux: 40},
-  { id: 4, tranche: 750000, taux: 60}
+  { id: 1, tranche: 100000, taux: 20 },
+  { id: 2, tranche: 250000, taux: 40},
+  { id: 3, tranche: 500000, taux: 60},
+  { id: 4, tranche: 750000, taux: 80},
+  { id: 5, tranche: 1000000, taux: 95}
 ];
 
 // Calculate the last ID in the todoList for use in generating new IDs.

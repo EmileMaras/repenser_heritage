@@ -14,7 +14,7 @@ const TodoInput: React.SFC<IProps> = props => (
         <table>
           <thead>
           <tr>
-            <th>Fin tranche (€)</th>
+            <th>Début tranche (€)</th>
             <th>Taux (%)</th>
 
           </tr>
