@@ -18,34 +18,34 @@ class Figure extends React.Component<ITodos , {}> {
     const xMax: number = 2000000;
     const taux: Array<number> = [];
     const tranches: Array<number> = [];
-    for (let todo in this.props.todoData){
+    for (let todo of this.props.todoData){
         taux.push(todo.taux)
         tranches.push(todo.tranche)
     }
     tranches.push(10000000000000)
-  while (xvalue[xvalue.length-1] < xMax){
-        if (xvalue[xvalue.length-1]>1000000) {
-            xvalue.push(xvalue[xvalue.length-1]+1000)
+    while (xvalue[xvalue.length - 1] < xMax){
+        if (xvalue[xvalue.length - 1] > 1000000) {
+            xvalue.push(xvalue[xvalue.length - 1] + 1000)
         }
         else {
-            xvalue.push(xvalue[xvalue.length-1]*1.02) 
+            xvalue.push(xvalue[xvalue.length - 1] * 1.02) 
         }
     }
     itranche = 0;
     contribution = 0;
-    xlast=xvalue[xvalue.length-1];
+    xlast = xvalue[xvalue.length - 1];
     for (let t of taux){
         tranche = tranches[itranche]
-        trancheNext = tranches[itranche+1]
+        trancheNext = tranches[itranche + 1]
         if (xlast < t){
             break
         }
         else {
-            contribution += (Math.min(xlast,trancheNext) - tranche)*t/100
+            contribution += (Math.min(xlast, trancheNext) - tranche) * t / 100
             
         }
     }
-    yvalue.push(xlast-contribution)
+    yvalue.push(xlast - contribution)
     return (
       <Plot
         data={[
