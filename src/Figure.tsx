@@ -16,8 +16,12 @@ class Figure extends React.Component<ITodos , {}> {
     var trancheNext: number;
     var xlast: number, tranche: number;
     const xMax: number = 2000000;
-    const taux: Array<number> = this.props.todoData.taux;
-    const tranches: Array<number> = this.props.todoData.tranche;
+    const taux: Array<number> = [];
+    const tranches: Array<number> = [];
+    for (let todo in this.props.todoData){
+        taux.push(todo.taux)
+        tranches.push(todo.tranche)
+    }
     tranches.push(10000000000000)
   while (xvalue[xvalue.length-1] < xMax){
         if (xvalue[xvalue.length-1]>1000000) {
