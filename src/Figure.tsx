@@ -13,41 +13,29 @@ class Figure extends React.Component<ITodos , {}> {
     var yvalue: number[] = [0];
     var contribution: number = 0;
     var itranche: number = 0;
-    var trancheNext: number;
-    var xlast: number, tranche: number;
-    const xMax: number = 2000000;
     const taux: Array<number> = [];
     const tranches: Array<number> = [];
     for (let todo of this.props.todoData){
         taux.push(todo.taux)
         tranches.push(todo.tranche)
     }
-    tranches.push(10000000000000)
-    while (xvalue[xvalue.length - 1] < xMax){
-        if (xvalue[xvalue.length - 1] < 1000000) {
-            xvalue.push(xvalue[xvalue.length - 1] + 10000)
-        }
-        else {
-            xvalue.push(xvalue[xvalue.length - 1] * 1.05) 
-        }
-    
-        itranche = 0;
-        contribution = 0;
-        xlast = xvalue[xvalue.length - 1];
-        for (let t of taux){
-            tranche = tranches[itranche]
-            trancheNext = tranches[itranche + 1]
-            if (xlast < tranche){
-                break
-            }
-            else {
-                contribution += (Math.min(xlast, trancheNext) - tranche) * t / 100
-                
-            }
-            itranche++
-        }
-        yvalue.push(xlast - contribution)
+    const xMax: number = Math.max(2000000, 2 * tranches[tranches.length - 1]);
+    itranche = 0;
+    contribution = 0;
+    var tauxPrec: number = 0;
+    var tranchePrec: number = 0;
+    for (let tr of tranches){
+        contribution += tauxPrec / 100 * (tr - tranchePrec)
+        tauxPrec = taux[itranche];
+        tranchePrec = tr;
+        itranche += 1;
+        xvalue.push(tr)
+        yvalue.push(tr - contribution)
     }
+    xvalue.push(xMax)
+    contribution += tauxPrec / 100 * (xMax - tranchePrec)
+    yvalue.push(xMax - contribution)
+    
     return (
       <Plot
         data={[
