@@ -24,28 +24,30 @@ class Figure extends React.Component<ITodos , {}> {
     }
     tranches.push(10000000000000)
     while (xvalue[xvalue.length - 1] < xMax){
-        if (xvalue[xvalue.length - 1] > 1000000) {
-            xvalue.push(xvalue[xvalue.length - 1] + 1000)
+        if (xvalue[xvalue.length - 1] < 1000000) {
+            xvalue.push(xvalue[xvalue.length - 1] + 10000)
         }
         else {
-            xvalue.push(xvalue[xvalue.length - 1] * 1.02) 
+            xvalue.push(xvalue[xvalue.length - 1] * 1.05) 
         }
+    
+        itranche = 0;
+        contribution = 0;
+        xlast = xvalue[xvalue.length - 1];
+        for (let t of taux){
+            tranche = tranches[itranche]
+            trancheNext = tranches[itranche + 1]
+            if (xlast < tranche){
+                break
+            }
+            else {
+                contribution += (Math.min(xlast, trancheNext) - tranche) * t / 100
+                
+            }
+            itranche++
+        }
+        yvalue.push(xlast - contribution)
     }
-    itranche = 0;
-    contribution = 0;
-    xlast = xvalue[xvalue.length - 1];
-    for (let t of taux){
-        tranche = tranches[itranche]
-        trancheNext = tranches[itranche + 1]
-        if (xlast < t){
-            break
-        }
-        else {
-            contribution += (Math.min(xlast, trancheNext) - tranche) * t / 100
-            
-        }
-    }
-    yvalue.push(xlast - contribution)
     return (
       <Plot
         data={[
@@ -59,7 +61,7 @@ class Figure extends React.Component<ITodos , {}> {
         ]}
         style={{ width: '100%', height: '40%' }}
         layout={{
-              autosize: true, title: 'Taux de mutualisation'
+              autosize: true, title: 'Montant herité VS montant héritage filial brut'
             }}
       />
     );
