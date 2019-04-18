@@ -1,7 +1,7 @@
 import * as React from "react";
 import produce from "immer";
 
-import { ITodo } from "./types";
+import { ITodo, IHeritage } from "./types";
  
 // Define the shape of the state. It might be more convenient to embed
 // the 'completed' state inside the Todo interface. However, this way it allows
@@ -12,6 +12,7 @@ interface IState {
   trancheAdd: number;
   tauxAdd: number;
   errormessage: string;
+  heritageBrute: IHeritage[];
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -35,6 +36,25 @@ const initialTodos = [
   { id: 5, tranche: 1000000, taux: 95}
 ];
 
+
+const heritageBruteData = [
+  { x: 0, h: 0  },
+  { x: 10, h: 501},
+  { x: 20, h: 6512},
+  { x: 30, h: 30058},
+  { x: 40, h: 69133},
+  { x: 50, h: 120231},
+  { x: 60, h: 200385},
+  { x: 70, h: 280539},
+  { x: 80, h: 395761},
+  { x: 90, h: 646243},
+  { x: 95, h: 1067052},
+  { x: 99, h: 2053950},
+  { x: 99.5, h: 4528709},
+  { x: 99.9, h: 7314065},
+  { x: 100, h: 27653179}
+];
+
 // Calculate the last ID in the todoList for use in generating new IDs.
 let nextId = Math.max(...initialTodos.map(t => t.id)) + 1;
 
@@ -49,9 +69,57 @@ class StateContainer extends React.PureComponent<{}, IState> {
     todos: initialTodos,
     trancheAdd: 0,
     tauxAdd: 0,
-    errormessage: " "
+    errormessage: " ",
+    heritageBrute: heritageBruteData,
+    heritageNet:[{x: 0, h: 0}]
   };
 
+  
+  updateHeritageNet = () => {
+  	var heritageNew: IHeritage[];
+  	var iTranche: number = 0;
+  	var iHeritageBrute: number = 0;
+  	var xNext: number;
+  	var hNext: number;
+  	var heritageMutualiseTotal: number = 0;
+  	var tauxL: number, tauxN: number;
+  	var trancheL: number, trancheN: number;
+  	var hBruteN: number;
+  	contrDebutTranche: number = 0;
+  	heritageNew.push({x: 0, h: 0});
+  	var heritagePrev: IHeritage;
+  	while (iHeritageBrute < this.state.heritageBrute.length - 1){
+  		heritagePrev = heritageNew[heritageNew.length - 1]
+  		trancheL = this.state.todos[iTranche].tranche;
+  		tauxL = this.state.todos[iTranche].taux;
+  		trancheN = this.state.todos[iTranche + 1].tranche;
+  		tauxN = this.state.todos[iTranche + 1].taux;
+  		hBruteN = this.state.heritageBrute[iHeritageBrute + 1].h
+  		while (hBruteN > trancheN) {
+  			xNext = trancheN; 
+  			heritageMutualiseTotal += (xNext - heritagePrev.x) * (contrDebutTranche + (heritagePrev.h + trancheN - 2 * trancheL) / 2 * tauxN / 100) /100;
+  			contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
+  			hNext = hBruteN - contrDebutTranche;
+  			heritageNew.push({x: xNext, h: hNext});
+  			heritagePrev = {x: xNext, h: hNext};
+  			iTranche ++;
+  			trancheL = trancheN;
+  			tauxL = tauxN;
+  			if (iTranche < this.state.todos.length) {	
+  				trancheN = this.state.todos[iTranche + 1].tranche;
+  				tauxN = this.state.todos[iTranche + 1].taux;
+  			} else {
+  				trancheN = 1000000000000000000  			
+  			}		
+  		}
+  		
+  		xNext = this.state.heritageBrute[iHeritageBrute + 1].x
+  		heritageMutualiseTotal += (xNext - heritagePrev.x) * (contrDebutTranche + (heritagePrev.h + hBruteN - 2 * trancheL) / 2 * tauxL / 100) /100;
+  		hNext = hBruteN - contrDebutTranche - (hBruteN - trancheL) * tauxL /100;
+  		heritageNew.push({x: xNext, h: hNext});
+  		iHeritageBrute ++;
+  		
+  };
 
   deleteTodo = (id: number) => {
     // Use immer's produce for an immutable state update.
