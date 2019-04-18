@@ -13,6 +13,7 @@ interface IState {
   tauxAdd: number;
   errormessage: string;
   heritageBrute: IHeritage[];
+  heritageMutualiseTotal: number;
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -71,54 +72,65 @@ class StateContainer extends React.PureComponent<{}, IState> {
     tauxAdd: 0,
     errormessage: " ",
     heritageBrute: heritageBruteData,
-    heritageNet:[{x: 0, h: 0}]
+    heritageNet: [{x: 0, h: 0}],
+    heritageMutualiseTotal: 0
   };
 
   
   updateHeritageNet = () => {
-  	var heritageNew: IHeritage[];
-  	var iTranche: number = 0;
-  	var iHeritageBrute: number = 0;
-  	var xNext: number;
-  	var hNext: number;
-  	var heritageMutualiseTotal: number = 0;
-  	var tauxL: number, tauxN: number;
-  	var trancheL: number, trancheN: number;
-  	var hBruteN: number;
-  	contrDebutTranche: number = 0;
-  	heritageNew.push({x: 0, h: 0});
-  	var heritagePrev: IHeritage;
-  	while (iHeritageBrute < this.state.heritageBrute.length - 1){
-  		heritagePrev = heritageNew[heritageNew.length - 1]
-  		trancheL = this.state.todos[iTranche].tranche;
-  		tauxL = this.state.todos[iTranche].taux;
-  		trancheN = this.state.todos[iTranche + 1].tranche;
-  		tauxN = this.state.todos[iTranche + 1].taux;
-  		hBruteN = this.state.heritageBrute[iHeritageBrute + 1].h
-  		while (hBruteN > trancheN) {
-  			xNext = trancheN; 
-  			heritageMutualiseTotal += (xNext - heritagePrev.x) * (contrDebutTranche + (heritagePrev.h + trancheN - 2 * trancheL) / 2 * tauxN / 100) /100;
-  			contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
-  			hNext = hBruteN - contrDebutTranche;
-  			heritageNew.push({x: xNext, h: hNext});
-  			heritagePrev = {x: xNext, h: hNext};
-  			iTranche ++;
-  			trancheL = trancheN;
-  			tauxL = tauxN;
-  			if (iTranche < this.state.todos.length) {	
-  				trancheN = this.state.todos[iTranche + 1].tranche;
-  				tauxN = this.state.todos[iTranche + 1].taux;
-  			} else {
-  				trancheN = 1000000000000000000  			
-  			}		
-  		}
-  		
-  		xNext = this.state.heritageBrute[iHeritageBrute + 1].x
-  		heritageMutualiseTotal += (xNext - heritagePrev.x) * (contrDebutTranche + (heritagePrev.h + hBruteN - 2 * trancheL) / 2 * tauxL / 100) /100;
-  		hNext = hBruteN - contrDebutTranche - (hBruteN - trancheL) * tauxL /100;
-  		heritageNew.push({x: xNext, h: hNext});
-  		iHeritageBrute ++;
-  		
+    var heritageNew: IHeritage[] = [{x: 0, h: 0}];
+    var iTranche: number = 0;
+    var iHeritageBrute: number = 0;
+    var xNext: number;
+    var hNext: number;
+    var heritageMutualiseTotal: number = 0;
+    var tauxL: number, tauxN: number;
+    var trancheL: number, trancheN: number;
+    var hBruteN: number;
+    var contrDebutTranche: number = 0;
+    var heritagePrev: IHeritage;
+    while (iHeritageBrute < this.state.heritageBrute.length - 1){
+        heritagePrev = heritageNew[heritageNew.length - 1]
+        trancheL = this.state.todos[iTranche].tranche;
+        tauxL = this.state.todos[iTranche].taux;
+        trancheN = this.state.todos[iTranche + 1].tranche;
+        tauxN = this.state.todos[iTranche + 1].taux;
+        hBruteN = this.state.heritageBrute[iHeritageBrute + 1].h
+        while (hBruteN > trancheN) {
+            xNext = trancheN; 
+            heritageMutualiseTotal += (xNext - heritagePrev.x) * 
+                (contrDebutTranche + (heritagePrev.h + trancheN - 2 * trancheL) / 2 * tauxN / 100) / 100;
+            contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
+            hNext = hBruteN - contrDebutTranche;
+            heritageNew.push({x: xNext, h: hNext});
+            heritagePrev = {x: xNext, h: hNext};
+            iTranche ++;
+            trancheL = trancheN;
+            tauxL = tauxN;
+            if (iTranche < this.state.todos.length) {	
+                trancheN = this.state.todos[iTranche + 1].tranche;
+                tauxN = this.state.todos[iTranche + 1].taux;
+                } else {
+                    trancheN = 1000000000000000000  			
+                }
+        }
+        
+        xNext = this.state.heritageBrute[iHeritageBrute + 1].x
+        heritageMutualiseTotal += (xNext - heritagePrev.x) * 
+            (contrDebutTranche + (heritagePrev.h + hBruteN - 2 * trancheL) / 2 * tauxL / 100) / 100;
+        hNext = hBruteN - contrDebutTranche - (hBruteN - trancheL) * tauxL / 100;
+        heritageNew.push({x: xNext, h: hNext});
+        iHeritageBrute ++;
+        };
+    this.setState(prevState => {
+        return { todos: prevState.todos,
+            trancheAdd: 0,
+            tauxAdd: 0,
+            errormessage: prevState.errormessage,
+            heritageBruteData: prevState.heritageBruteData,
+            heritageMutualiseTotal: heritageMutualiseTotal,
+            heritageNet: heritageNew};
+    });
   };
 
   deleteTodo = (id: number) => {
