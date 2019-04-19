@@ -26,6 +26,7 @@ interface IContext {
     changeAddTaux: (taux: number) => void;      
     addTodo: () => void;
     deleteTodo: (id: number) => void;
+    updateHeritage: () => void;
   };
 }
 
@@ -78,7 +79,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
 
   
   updateHeritageNet = () => {
-    var heritageNew: IHeritage[] = [{x: 0, h: 0}];
+   this.setState(prevState => {var heritageNew: IHeritage[] = [{x: 0, h: 0}];
     var iTranche: number = 0;
     var iHeritageBrute: number = 0;
     var xNext: number;
@@ -122,8 +123,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
         heritageNew.push({x: xNext, h: hNext});
         iHeritageBrute ++;
         };
-    this.setState(prevState => {
-        return { todos: prevState.todos,
+    
+   return { todos: prevState.todos,
             trancheAdd: 0,
             tauxAdd: 0,
             errormessage: prevState.errormessage,
