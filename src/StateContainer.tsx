@@ -14,6 +14,7 @@ interface IState {
   errormessage: string;
   heritageBrute: IHeritage[];
   heritageMutualiseTotal: number;
+  heritageNet: IHeritage[];
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -26,7 +27,7 @@ interface IContext {
     changeAddTaux: (taux: number) => void;      
     addTodo: () => void;
     deleteTodo: (id: number) => void;
-    updateHeritage: () => void;
+    updateHeritageNet: () => void;
   };
 }
 
@@ -79,7 +80,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
 
   
   updateHeritageNet = () => {
-   this.setState(prevState => {var heritageNew: IHeritage[] = [{x: 0, h: 0}];
+    var heritageNew: IHeritage[] = [{x: 0, h: 0}];
     var iTranche: number = 0;
     var iHeritageBrute: number = 0;
     var xNext: number;
@@ -124,15 +125,10 @@ class StateContainer extends React.PureComponent<{}, IState> {
         iHeritageBrute ++;
         };
     
-   return { todos: prevState.todos,
-            trancheAdd: 0,
-            tauxAdd: 0,
-            errormessage: prevState.errormessage,
-            heritageBruteData: prevState.heritageBruteData,
+    this.setState({ 
             heritageMutualiseTotal: heritageMutualiseTotal,
-            heritageNet: heritageNew};
-    });
-  };
+            heritageNet: heritageNew});
+   };
 
   deleteTodo = (id: number) => {
     // Use immer's produce for an immutable state update.
@@ -212,7 +208,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
         deleteTodo: this.deleteTodo,
         addTodo: this.addTodo,
         changeAddEntry: this.changeAddEntry,
-        changeAddTaux: this.changeAddTaux
+        changeAddTaux: this.changeAddTaux,
+        updateHeritageNet: this.updateHeritageNet
       }
     };
 
