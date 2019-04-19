@@ -9,6 +9,7 @@ export default () => (
       <TodoList
         todos={state.todos}
         handleDelete={actions.deleteTodo}
+        updateHeritage={actions.updateHeritageNet}
       />
     )}
   </StateConsumer>
