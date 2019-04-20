@@ -86,20 +86,26 @@ class StateContainer extends React.PureComponent<{}, IState> {
     var xNext: number;
     var hNext: number;
     var heritageMutualiseTotal: number = 0;
-    var tauxL: number, tauxN: number;
-    var trancheL: number, trancheN: number;
-    var hBruteN: number;
+    var tauxL: number, tauxN: number = 0;
+    var trancheL: number, trancheN: number = 0;
+    var hBruteN: number, hBruteL: number;
+    var xBruteN: number, xBruteL: number;
     var contrDebutTranche: number = 0;
     var heritagePrev: IHeritage;
     while (iHeritageBrute < this.state.heritageBrute.length - 1){
         heritagePrev = heritageNew[heritageNew.length - 1]
         trancheL = this.state.todos[iTranche].tranche;
         tauxL = this.state.todos[iTranche].taux;
-        trancheN = this.state.todos[iTranche + 1].tranche;
-        tauxN = this.state.todos[iTranche + 1].taux;
+        if (iTranche < this.state.todos.length - 1) {
+            trancheN = this.state.todos[iTranche + 1].tranche;
+            tauxN = this.state.todos[iTranche + 1].taux;
+        }
         hBruteN = this.state.heritageBrute[iHeritageBrute + 1].h
+        hBruteL = this.state.heritageBrute[iHeritageBrute].h
+        xBruteN = this.state.heritageBrute[iHeritageBrute + 1].x
+        xBruteL = this.state.heritageBrute[iHeritageBrute].x
         while (hBruteN > trancheN) {
-            xNext = trancheN; 
+            xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
             heritageMutualiseTotal += (xNext - heritagePrev.x) * 
                 (contrDebutTranche + (heritagePrev.h + trancheN - 2 * trancheL) / 2 * tauxN / 100) / 100;
             contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
@@ -109,7 +115,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
             iTranche ++;
             trancheL = trancheN;
             tauxL = tauxN;
-            if (iTranche < this.state.todos.length) {	
+            if (iTranche < this.state.todos.length - 1) {	
                 trancheN = this.state.todos[iTranche + 1].tranche;
                 tauxN = this.state.todos[iTranche + 1].taux;
                 } else {

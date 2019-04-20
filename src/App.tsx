@@ -22,7 +22,7 @@ export default () => (
   <div>
     <StateConsumer>
     {({state, actions }) => (
-    <FigureDistribution heritageBrute={state.heritageBrute}/>)}
+    <FigureDistribution heritageBrute={state.heritageBrute} heritageNet={state.heritageNet}/>)}
     </StateConsumer>
   </div>
  </div>
