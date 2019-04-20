@@ -81,7 +81,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
   
   updateHeritageNet = () => {
     var heritageNew: IHeritage[] = [{x: 0, h: 0}];
-    var iTranche: number = 0;
+    var iTranche: number = -1;
     var iHeritageBrute: number = 0;
     var xNext: number;
     var hNext: number;
@@ -98,15 +98,18 @@ class StateContainer extends React.PureComponent<{}, IState> {
         hBruteL = this.state.heritageBrute[iHeritageBrute].h
         xBruteN = this.state.heritageBrute[iHeritageBrute + 1].x
         xBruteL = this.state.heritageBrute[iHeritageBrute].x
-        trancheL = this.state.todos[iTranche].tranche;
-        tauxL = this.state.todos[iTranche].taux;
-        if (trancheL > hBruteL) {
+        if (iTranche === -1) {
             trancheL = 0;
             tauxL = 0;
+        }else{
+            trancheL = this.state.todos[iTranche].tranche;
+            tauxL = this.state.todos[iTranche].taux;
         }
         if (iTranche < this.state.todos.length - 1) {
             trancheN = this.state.todos[iTranche + 1].tranche;
             tauxN = this.state.todos[iTranche + 1].taux;
+        }else{
+            trancheN = 200000000000000000000
         }
         while (hBruteN > trancheN) {
             xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
