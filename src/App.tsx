@@ -4,6 +4,7 @@ import { StateConsumer } from './StateContainer';
 import TodoListContainer from './TodoListContainer';
 import TodoInputContainer from './TodoInputContainer';
 import Figure from './Figure';
+import FigureDistribution from './FigureDistribution';
 
 export default () => (
  <div>
@@ -21,7 +22,7 @@ export default () => (
   <div>
     <StateConsumer>
     {({state, actions }) => (
-    <Figure todoData={state.todos}/>)}
+    <FigureDistribution heritageBrute={state.heritageBrute}/>)}
     </StateConsumer>
   </div>
  </div>
