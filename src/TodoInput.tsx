@@ -6,6 +6,7 @@ interface IProps {
   handleChange: (tranche: number) => void;
   handleChangeTaux: (taux: number) => void;
   handleSubmit: () => void;
+  updateHeritage: () => void;
   errormessage: string;
 }
 
@@ -40,7 +41,11 @@ const TodoInput: React.SFC<IProps> = props => (
             />
            </td>
            <td>
-                        <button onClick={props.handleSubmit}>Ajouter</button>
+              <button 
+                onClick={() => {props.handleSubmit();
+                                props.updateHeritage()}}
+              >Ajouter
+              </button>
            </td>
         </tr>
         </tbody>

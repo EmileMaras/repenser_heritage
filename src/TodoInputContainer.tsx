@@ -13,6 +13,7 @@ export default () => (
         handleChangeTaux={actions.changeAddTaux}
         handleSubmit={actions.addTodo}
         errormessage={state.errormessage}
+        updateHeritage={actions.updateHeritageNet}
       />
     )}
   </StateConsumer>
