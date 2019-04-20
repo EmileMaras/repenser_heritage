@@ -94,16 +94,20 @@ class StateContainer extends React.PureComponent<{}, IState> {
     var heritagePrev: IHeritage;
     while (iHeritageBrute < this.state.heritageBrute.length - 1){
         heritagePrev = heritageNew[heritageNew.length - 1]
-        trancheL = this.state.todos[iTranche].tranche;
-        tauxL = this.state.todos[iTranche].taux;
-        if (iTranche < this.state.todos.length - 1) {
-            trancheN = this.state.todos[iTranche + 1].tranche;
-            tauxN = this.state.todos[iTranche + 1].taux;
-        }
         hBruteN = this.state.heritageBrute[iHeritageBrute + 1].h
         hBruteL = this.state.heritageBrute[iHeritageBrute].h
         xBruteN = this.state.heritageBrute[iHeritageBrute + 1].x
         xBruteL = this.state.heritageBrute[iHeritageBrute].x
+        trancheL = this.state.todos[iTranche].tranche;
+        tauxL = this.state.todos[iTranche].taux;
+        if (trancheL > hBruteL) {
+            trancheL = 0;
+            tauxL = 0;
+        }
+        if (iTranche < this.state.todos.length - 1) {
+            trancheN = this.state.todos[iTranche + 1].tranche;
+            tauxN = this.state.todos[iTranche + 1].taux;
+        }
         while (hBruteN > trancheN) {
             xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
             heritageMutualiseTotal += (xNext - heritagePrev.x) * 
@@ -123,7 +127,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
                 }
         }
         
-        xNext = this.state.heritageBrute[iHeritageBrute + 1].x
+        xNext = xBruteN;
         heritageMutualiseTotal += (xNext - heritagePrev.x) * 
             (contrDebutTranche + (heritagePrev.h + hBruteN - 2 * trancheL) / 2 * tauxL / 100) / 100;
         hNext = hBruteN - contrDebutTranche - (hBruteN - trancheL) * tauxL / 100;
