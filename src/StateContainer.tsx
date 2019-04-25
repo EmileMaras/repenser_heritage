@@ -78,7 +78,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
   };
 
   
-  updateHeritageNet = (state : IState) => {
+  updateHeritageNet = () => {
+      this.setState(state => {
     var heritageNew: IHeritage[] = [{x: 0, h: 0}];
     var iTranche: number = -1;
     var iHeritageBrute: number = 0;
@@ -143,6 +144,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
     this.setState({ 
             heritageMutualiseTotal: heritageMutualiseTotal,
             heritageNet: heritageNew});
+      });
    };
 
   deleteTodo = (id: number) => {
@@ -153,6 +155,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
         state.todos.splice(index, 1);
       })
     );
+    this.updateHeritageNet()
   };
 
   addTodo = () => {
@@ -203,6 +206,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
         errormessage: errormessageloc})
         };       
     });
+    this.updateHeritageNet()
   };
 
   changeAddEntry = (tranche: number) => {
