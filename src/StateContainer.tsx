@@ -27,7 +27,6 @@ interface IContext {
     changeAddTaux: (taux: number) => void;      
     addTodo: () => void;
     deleteTodo: (id: number) => void;
-    updateHeritageNet: () => void;
   };
 }
 
@@ -79,7 +78,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
   };
 
   
-  updateHeritageNet = () => {
+  updateHeritageNet = (state : IState) => {
     var heritageNew: IHeritage[] = [{x: 0, h: 0}];
     var iTranche: number = -1;
     var iHeritageBrute: number = 0;
@@ -94,24 +93,27 @@ class StateContainer extends React.PureComponent<{}, IState> {
     var heritagePrev: IHeritage;
     while (iHeritageBrute < this.state.heritageBrute.length - 1){
         heritagePrev = heritageNew[heritageNew.length - 1]
-        hBruteN = this.state.heritageBrute[iHeritageBrute + 1].h
-        hBruteL = this.state.heritageBrute[iHeritageBrute].h
-        xBruteN = this.state.heritageBrute[iHeritageBrute + 1].x
-        xBruteL = this.state.heritageBrute[iHeritageBrute].x
+        hBruteN = state.heritageBrute[iHeritageBrute + 1].h
+        hBruteL = state.heritageBrute[iHeritageBrute].h
+        xBruteN = state.heritageBrute[iHeritageBrute + 1].x
+        xBruteL = state.heritageBrute[iHeritageBrute].x
         if (iTranche === -1) {
             trancheL = 0;
             tauxL = 0;
         }else{
-            trancheL = this.state.todos[iTranche].tranche;
-            tauxL = this.state.todos[iTranche].taux;
+            trancheL = state.todos[iTranche].tranche;
+            tauxL = state.todos[iTranche].taux;
         }
-        if (iTranche < this.state.todos.length - 1) {
-            trancheN = this.state.todos[iTranche + 1].tranche;
-            tauxN = this.state.todos[iTranche + 1].taux;
+        if (iTranche < state.todos.length - 1) {
+            trancheN = state.todos[iTranche + 1].tranche;
+            tauxN = state.todos[iTranche + 1].taux;
         }else{
             trancheN = 200000000000000000000
         }
         while (hBruteN > trancheN) {
+            console.log("coucoula")
+            console.log(trancheN)
+            console.log(hBruteN)
             xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
             heritageMutualiseTotal += (xNext - heritagePrev.x) * 
                 (contrDebutTranche + (heritagePrev.h + trancheN - 2 * trancheL) / 2 * tauxN / 100) / 100;
@@ -122,9 +124,9 @@ class StateContainer extends React.PureComponent<{}, IState> {
             iTranche ++;
             trancheL = trancheN;
             tauxL = tauxN;
-            if (iTranche < this.state.todos.length - 1) {	
-                trancheN = this.state.todos[iTranche + 1].tranche;
-                tauxN = this.state.todos[iTranche + 1].taux;
+            if (iTranche < state.todos.length - 1) {	
+                trancheN = state.todos[iTranche + 1].tranche;
+                tauxN = state.todos[iTranche + 1].taux;
                 } else {
                     trancheN = 1000000000000000000  			
                 }
@@ -189,16 +191,16 @@ class StateContainer extends React.PureComponent<{}, IState> {
       }     
       
       if (entryOk) {  
-      return {
+      this.setState({
         todos: sortedTodo,
         trancheAdd: 0,
         tauxAdd: 0,
-        errormessage: ""}
+        errormessage: ""})
       } else {
-       return {todos: prevState.todos,
+       this.setState({todos: prevState.todos,
         trancheAdd: 0,
         tauxAdd: 0,
-        errormessage: errormessageloc}
+        errormessage: errormessageloc})
         };       
     });
   };
@@ -221,8 +223,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
         deleteTodo: this.deleteTodo,
         addTodo: this.addTodo,
         changeAddEntry: this.changeAddEntry,
-        changeAddTaux: this.changeAddTaux,
-        updateHeritageNet: this.updateHeritageNet
+        changeAddTaux: this.changeAddTaux
       }
     };
 

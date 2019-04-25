@@ -4,7 +4,6 @@ import { ITodo } from "./types";
 export interface IProps {
   todos: Array<ITodo>;
   handleDelete: (id: number) => void;
-  updateHeritage: () => void;
 }
 
 
@@ -29,8 +28,7 @@ const TodoList: React.SFC<IProps> = props => {
                 <td> 
                     <button 
                         type="button" 
-                        onClick={() => {props.handleDelete(todo.id);
-                                        props.updateHeritage()}}
+                        onClick={() => {props.handleDelete(todo.id)}}
                     >
                     Enlever
                     </button>
