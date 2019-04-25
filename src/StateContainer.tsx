@@ -112,11 +112,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
             trancheN = 200000000000000000000
         }
         while (hBruteN > trancheN) {
-            console.log("coucoula")
-            console.log(trancheN)
-            console.log(hBruteN)
             xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
-            heritageMutualiseTotal += (xNext - heritagePrev.x) /100 * 
+            heritageMutualiseTotal += (xNext - heritagePrev.x) / 100 * 
                 (contrDebutTranche + (heritagePrev.h + trancheN - 2 * trancheL) / 2 * tauxN / 100);
             contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
             hNext = trancheN - contrDebutTranche;
@@ -141,9 +138,13 @@ class StateContainer extends React.PureComponent<{}, IState> {
         iHeritageBrute ++;
         };
     
+    var heritageNewPlusMutuel: IHeritage[] = [];
+    for (let xh  of heritageNew){
+        heritageNewPlusMutuel.push({x: xh.x, h: xh.h + heritageMutualiseTotal})
+    }
     this.setState({ 
             heritageMutualiseTotal: heritageMutualiseTotal,
-            heritageNet: heritageNew});
+            heritageNet: heritageNewPlusMutuel});
       });
    };
 
