@@ -116,10 +116,10 @@ class StateContainer extends React.PureComponent<{}, IState> {
             console.log(trancheN)
             console.log(hBruteN)
             xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
-            heritageMutualiseTotal += (xNext - heritagePrev.x) * 
-                (contrDebutTranche + (heritagePrev.h + trancheN - 2 * trancheL) / 2 * tauxN / 100) / 100;
+            heritageMutualiseTotal += (xNext - heritagePrev.x) /100 * 
+                (contrDebutTranche + (heritagePrev.h + trancheN - 2 * trancheL) / 2 * tauxN / 100);
             contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
-            hNext = hBruteN - contrDebutTranche;
+            hNext = trancheN - contrDebutTranche;
             heritageNew.push({x: xNext, h: hNext});
             heritagePrev = {x: xNext, h: hNext};
             iTranche ++;
