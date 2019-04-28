@@ -99,9 +99,10 @@ function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
     while (hBruteN > trancheN) {
         xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
         heritageMutualiseTotal += (xNext - heritagePrev.x) / 100 * 
-            (contrDebutTranche + (heritagePrev.h + trancheN - 2 * trancheL) / 2 * tauxN / 100);
+            (contrDebutTranche + (hBruteL + trancheN - 2 * trancheL) / 2 * tauxN / 100);
         contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
         hNext = trancheN - contrDebutTranche;
+        hBruteL = trancheN;
         heritageNew.push({x: xNext, h: hNext});
         heritagePrev = {x: xNext, h: hNext};
         iTranche ++;
@@ -114,10 +115,18 @@ function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
                 trancheN = 1000000000000000000              
             }
     }
-    
     xNext = xBruteN;
     heritageMutualiseTotal += (xNext - heritagePrev.x) * 
-        (contrDebutTranche + (heritagePrev.h + hBruteN - 2 * trancheL) / 2 * tauxL / 100) / 100;
+        (contrDebutTranche + (hBruteL + hBruteN - 2 * trancheL) / 2 * tauxL / 100) / 100;
+    console.log("coucou")      
+    console.log(xNext)      
+    console.log(heritagePrev.x)
+    console.log(contrDebutTranche)
+    console.log(heritagePrev.h)
+    console.log(hBruteN)
+    console.log(trancheL)
+    console.log(tauxL)
+    console.log(heritageMutualiseTotal)
     hNext = hBruteN - contrDebutTranche - (hBruteN - trancheL) * tauxL / 100;
     heritageNew.push({x: xNext, h: hNext});
     iHeritageBrute ++;
