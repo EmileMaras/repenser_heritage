@@ -13,6 +13,9 @@ const TodoList: React.SFC<IProps> = props => {
    return (
     <div >
       <table>
+           <col width="50%"/>
+           <col width="25%"/>
+           <col width="25%"/>
         <thead>
           <tr>
             <th>Début tranche (€)</th>
