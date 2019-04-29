@@ -14,12 +14,12 @@ export default () => (
     </h2>
     <TodoInputContainer />
     <TodoListContainer />
-    <StateConsumer>
-        {({state, actions }) => (
-        <Figure todoData={state.todos}/>)}
-    </StateConsumer>
   </div>
-  <div>
+  <div className="two-third-container">
+    <StateConsumer>
+    {({state, actions }) => (
+    <Figure todoData={state.todos}/>)}
+</StateConsumer>
     <StateConsumer>
     {({state, actions }) => (
     <FigureDistribution heritageBrute={state.heritageBrute} heritageNet={state.heritageNet}/>)}

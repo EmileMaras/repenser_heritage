@@ -332,11 +332,16 @@ dd {
   padding: 0 1rem; }
 
 .third-container {
+  float:left;
   max-width: 33%;
   padding: 0 1rem; 
   border: 1px solid #0366EE;}
 
-  
+.two-third-container {
+  float:left;
+  max-width: 67%;
+  padding: 0 1rem;}
+    
 .container, .small-container, .medium-container {
   max-width: 1200px;
   padding: 0 1rem;
