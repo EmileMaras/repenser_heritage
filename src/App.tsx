@@ -22,7 +22,7 @@ export default () => (
     </StateConsumer>
     <StateConsumer>
         {({state, actions }) => (
-        <Figure todoData={state.todos}/>)}
+        <Figure todoData={state.todos} heritageMutualiseTotal={state.heritageMutualiseTotal}/>)}
     </StateConsumer>
   </div>
  </div>

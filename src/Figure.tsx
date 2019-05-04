@@ -3,7 +3,8 @@ import Plot from 'react-plotly.js';
 import { ITodo } from './types';
 
 export interface ITodos{
-    todoData: Array<ITodo>
+    todoData: Array<ITodo>,
+    heritageMutualiseTotal: number
 }
 class Figure extends React.Component<ITodos , {}> {
 
@@ -11,6 +12,7 @@ class Figure extends React.Component<ITodos , {}> {
   public render() {
     var xvalue: number[] = [0];
     var yvalue: number[] = [0];
+    var yvalue2: number[] = [this.props.heritageMutualiseTotal];
     var contribution: number = 0;
     var itranche: number = 0;
     const taux: Array<number> = [];
@@ -31,11 +33,12 @@ class Figure extends React.Component<ITodos , {}> {
         itranche += 1;
         xvalue.push(tr)
         yvalue.push(tr - contribution)
+        yvalue2.push(tr - contribution + this.props.heritageMutualiseTotal)
     }
     xvalue.push(xMax)
     contribution += tauxPrec / 100 * (xMax - tranchePrec)
     yvalue.push(xMax - contribution)
-    
+    yvalue2.push(xMax - contribution + this.props.heritageMutualiseTotal)
     return (
       <Plot
         data={[
@@ -44,7 +47,14 @@ class Figure extends React.Component<ITodos , {}> {
             y: yvalue,
             type: 'scatter',
             mode: 'lines',
-            marker: {color: 'red'},
+            marker: {color: 'blue'},
+          },
+          {
+            x: xvalue,
+            y: yvalue2,
+            type: 'scatter',
+            mode: 'lines',
+            marker: {color: 'green'},
           }
         ]}
         style={{ width: '100%', height: '40%' }}
