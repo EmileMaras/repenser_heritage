@@ -17,12 +17,12 @@ export default () => (
   </div>
   <div className="two-third-container">
     <StateConsumer>
-    {({state, actions }) => (
-    <Figure todoData={state.todos}/>)}
-</StateConsumer>
+       {({state, actions }) => (
+        <FigureDistribution heritageBrute={state.heritageBrute} heritageNet={state.heritageNet}/>)}
+    </StateConsumer>
     <StateConsumer>
-    {({state, actions }) => (
-    <FigureDistribution heritageBrute={state.heritageBrute} heritageNet={state.heritageNet}/>)}
+        {({state, actions }) => (
+        <Figure todoData={state.todos}/>)}
     </StateConsumer>
   </div>
  </div>
