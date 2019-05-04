@@ -9,13 +9,19 @@ import FigureDistribution from './FigureDistribution';
 export default () => (
  <div>
   <div className="third-container">
-    <h2>
+    <h3>
     Choisissez les taux de mutualisation
-    </h2>
+    </h3>
     <TodoInputContainer />
     <TodoListContainer />
   </div>
   <div className="two-third-container">
+    <StateConsumer>
+       {({state, actions }) => (
+        <h3> 
+        L'héritage mutualisé représenterait state.heritageMutualiseTotal/390000 % de l'héritage total 
+        </h3>)}
+    </StateConsumer>
     <StateConsumer>
        {({state, actions }) => (
         <FigureDistribution heritageBrute={state.heritageBrute} heritageNet={state.heritageNet}/>)}
