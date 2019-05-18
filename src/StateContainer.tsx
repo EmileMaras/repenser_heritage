@@ -32,29 +32,14 @@ interface IContext {
 
 const initialTodos = [
   { id: 1, tranche: 100000, taux: 20 },
-  { id: 2, tranche: 250000, taux: 40},
-  { id: 3, tranche: 500000, taux: 60},
-  { id: 4, tranche: 750000, taux: 80},
-  { id: 5, tranche: 1000000, taux: 95}
+  { id: 2, tranche: 250000, taux: 50},
 ];
 
 
 const heritageBruteData = [
   { x: 0, h: 0  },
-  { x: 10, h: 1001.9267822878209},
-  { x: 20, h: 12023},
-  { x: 30, h: 48092},
-  { x: 40, h: 90173},
-  { x: 50, h: 150289},
-  { x: 60, h: 250481},
-  { x: 70, h: 310597},
-  { x: 80, h: 480924},
-  { x: 90, h: 811560},
-  { x: 95, h: 1322543},
-  { x: 99, h: 2785356},
-  { x: 99.5, h: 6272061},
-  { x: 99.9, h: 8356069},
-  { x: 100, h: 46950289}
+  { x: 50, h: 200000},
+  { x: 100, h: 1200000}
 ];
 
 // Calculate the last ID in the todoList for use in generating new IDs.
@@ -77,6 +62,7 @@ function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
     var xBruteN: number, xBruteL: number;
     var contrDebutTranche: number = 0;
     var heritagePrev: IHeritage;
+    console.log("updating")
     while (iHeritageBrute < heritageBrute.length - 1){
     heritagePrev = heritageNew[heritageNew.length - 1]
     hBruteN = heritageBrute[iHeritageBrute + 1].h
@@ -98,14 +84,27 @@ function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
     }
     while (hBruteN > trancheN) {
         xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
+        console.log("coucou2")  
+        console.log("heritageMutualiseTotalBefore " + heritageMutualiseTotal )
         heritageMutualiseTotal += (xNext - heritagePrev.x) / 100 * 
-            (contrDebutTranche + (hBruteL + trancheN - 2 * trancheL) / 2 * tauxN / 100);
+            (contrDebutTranche + (hBruteL + trancheN - 2 * trancheL) / 2 * tauxL / 100);
+        console.log((xNext - heritagePrev.x))
+        console.log((contrDebutTranche + (hBruteL + hBruteN - 2 * trancheL) / 2 * tauxN / 100) / 100)
+        console.log("xNext             " + xNext)      
+        console.log("heritagePrev.x    " + heritagePrev.x)
+        console.log("heritagePrev.h    " + heritagePrev.h)
+        console.log("contrDebutTranche " + contrDebutTranche)
+        console.log("hBruteN           " + hBruteN)
+        console.log("trancheL          " + trancheL)
+        console.log("tauxN             " + tauxN)
+        console.log("heritageMutualiseTotal " + heritageMutualiseTotal )
         contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
         hNext = trancheN - contrDebutTranche;
         hBruteL = trancheN;
         heritageNew.push({x: xNext, h: hNext});
         heritagePrev = {x: xNext, h: hNext};
         iTranche ++;
+
         trancheL = trancheN;
         tauxL = tauxN;
         if (iTranche < todos.length - 1) {    
@@ -116,17 +115,20 @@ function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
             }
     }
     xNext = xBruteN;
+    console.log("coucou")      
+    console.log("heritageMutualiseTotalBefore " + heritageMutualiseTotal )
     heritageMutualiseTotal += (xNext - heritagePrev.x) * 
         (contrDebutTranche + (hBruteL + hBruteN - 2 * trancheL) / 2 * tauxL / 100) / 100;
-    console.log("coucou")      
-    console.log(xNext)      
-    console.log(heritagePrev.x)
-    console.log(contrDebutTranche)
-    console.log(heritagePrev.h)
-    console.log(hBruteN)
-    console.log(trancheL)
-    console.log(tauxL)
-    console.log(heritageMutualiseTotal)
+    console.log((xNext - heritagePrev.x))
+    console.log((contrDebutTranche + (hBruteL + hBruteN - 2 * trancheL) / 2 * tauxL / 100) / 100)
+    console.log("xNext             " + xNext)      
+    console.log("heritagePrev.x    " + heritagePrev.x)
+    console.log("heritagePrev.h    " + heritagePrev.h)
+    console.log("contrDebutTranche " + contrDebutTranche)
+    console.log("hBruteN           " + hBruteN)
+    console.log("trancheL          " + trancheL)
+    console.log("tauxL             " + tauxL)
+    console.log("heritageMutualiseTotal " + heritageMutualiseTotal )
     hNext = hBruteN - contrDebutTranche - (hBruteN - trancheL) * tauxL / 100;
     heritageNew.push({x: xNext, h: hNext});
     iHeritageBrute ++;
