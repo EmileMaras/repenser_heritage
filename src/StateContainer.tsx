@@ -98,8 +98,20 @@ function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
     }
     while (hBruteN > trancheN) {
         xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
+        console.log("coucou2")  
+        console.log("heritageMutualiseTotalBefore " + heritageMutualiseTotal )
         heritageMutualiseTotal += (xNext - heritagePrev.x) / 100 * 
-            (contrDebutTranche + (hBruteL + trancheN - 2 * trancheL) / 2 * tauxN / 100);
+            (contrDebutTranche + (hBruteL + trancheN - 2 * trancheL) / 2 * tauxL / 100);
+        console.log((xNext - heritagePrev.x))
+        console.log("xNext             " + xNext)      
+        console.log("heritagePrev.x    " + heritagePrev.x)
+        console.log("heritagePrev.h    " + heritagePrev.h)
+        console.log("contrDebutTranche " + contrDebutTranche)
+        console.log("hBruteL           " + hBruteL)
+        console.log("hBruteN           " + hBruteN)
+        console.log("trancheL          " + trancheL)
+        console.log("tauxL             " + tauxL)
+        console.log("heritageMutualiseTotal " + heritageMutualiseTotal )
         contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
         hNext = trancheN - contrDebutTranche;
         hBruteL = trancheN;
@@ -116,18 +128,21 @@ function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
             }
     }
     xNext = xBruteN;
+    
     heritageMutualiseTotal += (xNext - heritagePrev.x) * 
         (contrDebutTranche + (hBruteL + hBruteN - 2 * trancheL) / 2 * tauxL / 100) / 100;
-    console.log("coucou")      
-    console.log(xNext)      
-    console.log(heritagePrev.x)
-    console.log(contrDebutTranche)
-    console.log(heritagePrev.h)
-    console.log(hBruteN)
-    console.log(trancheL)
-    console.log(tauxL)
-    console.log(heritageMutualiseTotal)
+    console.log("coucou")   
+    console.log("xNext             " + xNext)      
+    console.log("heritagePrev.x    " + heritagePrev.x)
+    console.log("heritagePrev.h    " + heritagePrev.h)
+    console.log("contrDebutTranche " + contrDebutTranche)
+    console.log("hBruteN           " + hBruteN)
+    console.log("trancheL          " + trancheL)
+    console.log("tauxL             " + tauxL)
+    console.log("heritageMutualiseTotal " + heritageMutualiseTotal )
     hNext = hBruteN - contrDebutTranche - (hBruteN - trancheL) * tauxL / 100;
+    console.log("hNext             " + hNext)
+        
     heritageNew.push({x: xNext, h: hNext});
     iHeritageBrute ++;
     };
