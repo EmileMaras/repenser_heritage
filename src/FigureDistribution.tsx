@@ -14,7 +14,7 @@ class FigureDistribution extends React.Component<ITodos , {}> {
     var yvalue: number[] = [];
     var xvalue2: number[] = [];
     var yvalue2: number[] = [];
-
+    var yvalue3: number[] = [];
     for (let heritage of this.props.heritageBrute){
         xvalue.push(heritage.x)
         yvalue.push(heritage.h)
@@ -22,6 +22,7 @@ class FigureDistribution extends React.Component<ITodos , {}> {
     for (let heritage of this.props.heritageNet){
         xvalue2.push(heritage.x)
         yvalue2.push(heritage.h)
+        yvalue3.push(heritage.h / 1.5)
     }    
     return (
       <Plot
@@ -32,6 +33,7 @@ class FigureDistribution extends React.Component<ITodos , {}> {
             type: 'scatter',
             mode: 'lines',
             marker: {color: 'red'},
+            name: 'Distribution actuelle'
           },
           {
             x: xvalue2,
@@ -39,6 +41,15 @@ class FigureDistribution extends React.Component<ITodos , {}> {
             type: 'scatter',
             mode: 'lines',
             marker: {color: 'green'},
+            name: "Distribution partiellement mutualisée <br> autant de parts que de décès"
+          },
+          {
+            x: xvalue2,
+            y: yvalue3,
+            type: 'scatter',
+            mode: 'lines',
+            marker: {color: 'blue'},
+            name: "Distribution partiellement mutualisée <br> 1,5 fois plus de parts que de décès"
           }
             ]}
         style={{ width: '100%', height: '40%' }}
