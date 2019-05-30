@@ -3,8 +3,9 @@ import Plot from 'react-plotly.js';
 import { IHeritage } from './types';
 
 export interface ITodos{
-    heritageBrute: Array<IHeritage>,
-    heritageNet: Array<IHeritage>
+    hBrute: Array<IHeritage>,
+    hNet: Array<IHeritage>,
+    hMut: number
 }
 class FigureDistribution extends React.Component<ITodos , {}> {
 
@@ -15,14 +16,14 @@ class FigureDistribution extends React.Component<ITodos , {}> {
     var xvalue2: number[] = [];
     var yvalue2: number[] = [];
     var yvalue3: number[] = [];
-    for (let heritage of this.props.heritageBrute){
+    for (let heritage of this.props.hBrute){
         xvalue.push(heritage.x)
         yvalue.push(heritage.h)
     }    
-    for (let heritage of this.props.heritageNet){
+    for (let heritage of this.props.hNet){
         xvalue2.push(heritage.x)
         yvalue2.push(heritage.h)
-        yvalue3.push(heritage.h / 1.5)
+        yvalue3.push(heritage.h + this.props.hMut * (1. / 1.5 - 1.))
     }    
     return (
       <Plot

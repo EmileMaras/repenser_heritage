@@ -19,12 +19,13 @@ export default () => (
     <StateConsumer>
        {({state, actions }) => (
         <h3> 
-        L'héritage mutualisé représenterait state.heritageMutualiseTotal/390000 % de l'héritage total 
+        L'héritage mutualisé représenterait {Math.round(state.heritageMutualiseTotal / 390000 * 1000) / 10} 
+        % de l'héritage total 
         </h3>)}
     </StateConsumer>
     <StateConsumer>
        {({state, actions }) => (
-        <FigureDistribution heritageBrute={state.heritageBrute} heritageNet={state.heritageNet}/>)}
+<FigureDistribution hBrute={state.heritageBrute} hNet={state.heritageNet} hMut={state.heritageMutualiseTotal}/>)}
     </StateConsumer>
     <StateConsumer>
         {({state, actions }) => (
