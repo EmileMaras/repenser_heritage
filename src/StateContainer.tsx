@@ -114,10 +114,11 @@ function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
         console.log("heritageMutualiseTotal " + heritageMutualiseTotal )
         contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
         hNext = trancheN - contrDebutTranche;
-        hBruteL = trancheN;
         heritageNew.push({x: xNext, h: hNext});
         heritagePrev = {x: xNext, h: hNext};
         iTranche ++;
+        hBruteL = trancheN;
+        xBruteL = xNext
         trancheL = trancheN;
         tauxL = tauxN;
         if (iTranche < todos.length - 1) {    
