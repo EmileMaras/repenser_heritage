@@ -235,12 +235,14 @@ class StateContainer extends React.PureComponent<{}, IState> {
           });
       }     
       
-      if (entryOk) {  
+      if (entryOk) {
+      
       this.setState({
         todos: sortedTodo,
         trancheAdd: 0,
         tauxAdd: 0,
         errormessage: ""})
+      this.updateHeritageNet()  
       } else {
        this.setState({todos: prevState.todos,
         trancheAdd: 0,
@@ -248,7 +250,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
         errormessage: errormessageloc})
         };       
     });
-    this.updateHeritageNet()
+    
   };
 
   changeAddEntry = (tranche: number) => {

@@ -16,12 +16,22 @@ export default () => (
     <TodoListContainer />
   </div>
   <div className="two-third-container">
+    <h3>
+    Visualisez les conséquences sur la distribution de l'héritage
+    </h3>
     <StateConsumer>
        {({state, actions }) => (
-        <h3> 
-        L'héritage mutualisé représenterait {Math.round(state.heritageMutualiseTotal / 390000 * 1000) / 10} 
-        % de l'héritage total 
-        </h3>)}
+        <div>
+         <h5> 
+         - Une part d'héritage mutualisé serait de {Math.round(state.heritageMutualiseTotal)} euros.
+         </h5>
+         <h5>
+         - A l'échelle nationale, l'héritage mutualisé 
+         représenterait {Math.round(state.heritageMutualiseTotal / 390000 * 1000) / 10} 
+         % de l'héritage total. 
+         </h5>
+        </div>
+        )}
     </StateConsumer>
     <StateConsumer>
        {({state, actions }) => (
