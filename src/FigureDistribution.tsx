@@ -36,28 +36,28 @@ class FigureDistribution extends React.Component<ITodos , {}> {
             marker: {color: 'red'},
             name: 'Distribution actuelle'
           },
-          {
-            x: xvalue2,
-            y: yvalue2,
-            type: 'scatter',
-            mode: 'lines',
-            marker: {color: 'green'},
-            name: "Distribution partiellement mutualisée <br> autant de parts que de décès"
-          },
+//          {
+//            x: xvalue2,
+//            y: yvalue2,
+//            type: 'scatter',
+//            mode: 'lines',
+//            marker: {color: 'green'},
+//            name: "Distribution partiellement mutualisée <br> autant de parts que de décès"
+//          },
           {
             x: xvalue2,
             y: yvalue3,
             type: 'scatter',
             mode: 'lines',
             marker: {color: 'blue'},
-            name: "Distribution partiellement mutualisée <br> 1,5 fois plus de parts que de décès"
+            name: "Distribution partiellement mutualisée" //<br> 1,5 fois plus de parts que de décès"
           }
             ]}
         style={{ width: '100%', height: '40%' }}
         layout={{
               autosize: true, title: "Distribution de l'héritage", 
               xaxis: {fixedrange: true, range: [0, 100]},
-              yaxis: {fixedrange: false, range: [0, 2000000]}
+              yaxis: {fixedrange: false, range: [0, 1400000]}
             }}
       />
     );

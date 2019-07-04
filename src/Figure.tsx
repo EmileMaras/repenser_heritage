@@ -44,17 +44,19 @@ class Figure extends React.Component<ITodos , {}> {
         data={[
           {
             x: xvalue,
-            y: yvalue,
-            type: 'scatter',
-            mode: 'lines',
-            marker: {color: 'blue'},
-          },
-          {
-            x: xvalue,
             y: yvalue2,
             type: 'scatter',
             mode: 'lines',
-            marker: {color: 'green'},
+            marker: {color: 'blue'},
+            name: "Héritage net total <br> (filial + mutualisé)"
+          },    
+          {
+            x: xvalue,
+            y: yvalue,
+            type: 'scatter',
+            mode: 'lines',
+            marker: {color: 'black'},
+            name: "Héritage filial net" 
           }
         ]}
         style={{ width: '100%', height: '40%' }}
