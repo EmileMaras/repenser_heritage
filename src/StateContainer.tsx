@@ -15,6 +15,7 @@ interface IState {
   heritageBrute: IHeritage[];
   heritageMutualiseTotal: number;
   heritageNet: IHeritage[];
+  ratioPartDeces: number;
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -175,7 +176,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
       errormessage: " ",
       heritageBrute: heritageBruteData,
       heritageNet: ret.heritageNet,
-      heritageMutualiseTotal: ret.heritageMutualiseTotal
+      heritageMutualiseTotal: ret.heritageMutualiseTotal,
+      ratioPartDeces: 1.5
     };
   }
 

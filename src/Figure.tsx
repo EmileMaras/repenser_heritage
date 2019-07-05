@@ -4,7 +4,8 @@ import { ITodo } from './types';
 
 export interface ITodos{
     todoData: Array<ITodo>,
-    heritageMutualiseTotal: number
+    heritageMutualiseTotal: number,
+    ratioPartDeces: number
 }
 class Figure extends React.Component<ITodos , {}> {
 
@@ -12,7 +13,7 @@ class Figure extends React.Component<ITodos , {}> {
   public render() {
     var xvalue: number[] = [0];
     var yvalue: number[] = [0];
-    var yvalue2: number[] = [this.props.heritageMutualiseTotal];
+    var yvalue2: number[] = [this.props.heritageMutualiseTotal / this.props.ratioPartDeces];
     var contribution: number = 0;
     var itranche: number = 0;
     const taux: Array<number> = [];
@@ -33,12 +34,12 @@ class Figure extends React.Component<ITodos , {}> {
         itranche += 1;
         xvalue.push(tr)
         yvalue.push(tr - contribution)
-        yvalue2.push(tr - contribution + this.props.heritageMutualiseTotal)
+        yvalue2.push(tr - contribution + this.props.heritageMutualiseTotal / this.props.ratioPartDeces)
     }
     xvalue.push(xMax)
     contribution += tauxPrec / 100 * (xMax - tranchePrec)
     yvalue.push(xMax - contribution)
-    yvalue2.push(xMax - contribution + this.props.heritageMutualiseTotal)
+    yvalue2.push(xMax - contribution + this.props.heritageMutualiseTotal / this.props.ratioPartDeces)
     return (
       <Plot
         data={[

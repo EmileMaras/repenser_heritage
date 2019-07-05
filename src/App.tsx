@@ -23,7 +23,8 @@ export default () => (
        {({state, actions }) => (
         <div>
          <h5> 
-         - Une part d'héritage mutualisé serait de {Math.round(state.heritageMutualiseTotal)} euros.
+         - Une part d'héritage mutualisé serait  
+         de {Math.round(state.heritageMutualiseTotal / state.ratioPartDeces)} euros.
          </h5>
          <h5>
          - A l'échelle nationale, l'héritage mutualisé 
@@ -35,11 +36,20 @@ export default () => (
     </StateConsumer>
     <StateConsumer>
        {({state, actions }) => (
-<FigureDistribution hBrute={state.heritageBrute} hNet={state.heritageNet} hMut={state.heritageMutualiseTotal}/>)}
+<FigureDistribution 
+   hBrute={state.heritageBrute} 
+   hNet={state.heritageNet} 
+   hMut={state.heritageMutualiseTotal} 
+   ratioPartDeces={state.ratioPartDeces}
+/>)}
     </StateConsumer>
     <StateConsumer>
         {({state, actions }) => (
-        <Figure todoData={state.todos} heritageMutualiseTotal={state.heritageMutualiseTotal}/>)}
+        <Figure 
+            todoData={state.todos} 
+            heritageMutualiseTotal={state.heritageMutualiseTotal}
+            ratioPartDeces={state.ratioPartDeces}
+        />)}
     </StateConsumer>
   </div>
  </div>

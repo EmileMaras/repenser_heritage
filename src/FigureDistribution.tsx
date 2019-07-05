@@ -5,7 +5,8 @@ import { IHeritage } from './types';
 export interface ITodos{
     hBrute: Array<IHeritage>,
     hNet: Array<IHeritage>,
-    hMut: number
+    hMut: number,
+    ratioPartDeces: number
 }
 class FigureDistribution extends React.Component<ITodos , {}> {
 
@@ -23,7 +24,7 @@ class FigureDistribution extends React.Component<ITodos , {}> {
     for (let heritage of this.props.hNet){
         xvalue2.push(heritage.x)
         yvalue2.push(heritage.h)
-        yvalue3.push(heritage.h + this.props.hMut * (1. / 1.5 - 1.))
+        yvalue3.push(heritage.h + this.props.hMut * (1. / this.props.ratioPartDeces - 1.))
     }    
     return (
       <Plot
