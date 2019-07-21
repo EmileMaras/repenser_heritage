@@ -28,6 +28,7 @@ interface IContext {
     changeAddTaux: (taux: number) => void;      
     addTodo: () => void;
     deleteTodo: (id: number) => void;
+    changeRatio: (ratio: number) => void;
   };
 }
 
@@ -259,6 +260,10 @@ class StateContainer extends React.PureComponent<{}, IState> {
     this.setState({ trancheAdd: tranche });
   };
 
+  changeRatio = (ratio: number) => {
+    this.setState({ ratioPartDeces: ratio });
+  };
+
   changeAddTaux = (taux: number) => {
     this.setState({ tauxAdd: taux });
   };
@@ -273,7 +278,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
         deleteTodo: this.deleteTodo,
         addTodo: this.addTodo,
         changeAddEntry: this.changeAddEntry,
-        changeAddTaux: this.changeAddTaux
+        changeAddTaux: this.changeAddTaux,
+        changeRatio: this.changeRatio
       }
     };
 

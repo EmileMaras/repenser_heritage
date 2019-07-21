@@ -9,6 +9,8 @@ export default () => (
       <TodoList
         todos={state.todos}
         handleDelete={actions.deleteTodo}
+        ratioPartDeces={state.ratioPartDeces}
+        handleRatioChange={actions.changeRatio}
       />
     )}
   </StateConsumer>
