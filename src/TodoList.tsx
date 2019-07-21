@@ -52,12 +52,17 @@ const TodoList: React.SFC<IProps> = props => {
            <th>
             Ratio entre le nombre de parts distribuées et le nombre de décès.
             <span 
-             title="Afin de faire diminuer progressivement l'âge auquel 
-les citoyens pourront toucher leur part d'héritage mutualisé, 
-il est nécessaire de distribuer un nombre de parts d'héritage
-plus grand que le nombre de décès"
+             title="Afin de faire diminuer progressivement l'âge auquel les citoyens pourront toucher 
+leur part d'héritage mutualisé, il est nécessaire de distribuer un nombre de parts d'héritage
+plus grand que le nombre de décès.
+Plus ce ratio est grand, plus petit sera le montant d'une part d'héritage mutualisée mais 
+plus rapidement l'âge minimal auquel les citoyens pourront toucher leur part d'héritage
+mutualisé diminuera rapidement.
+En première approximation, on peut considérer que cet âge diminuera chaque année de (x - 1) années."
             >
+             <dt>
              En savoir plus.
+             </dt>
             </span>
             </th>
           </tr>    
