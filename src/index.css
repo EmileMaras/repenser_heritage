@@ -348,7 +348,8 @@ dd {
 .two-third-container {
   float:left;
   max-width: 67%;
-  padding: 0 1rem;}
+  padding: 0 1rem;
+  border: 1px solid #0366EE;}
     
 .container, .small-container, .medium-container {
   max-width: 1200px;
