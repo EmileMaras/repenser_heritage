@@ -1,12 +1,6 @@
-import * as React from "react";
-import { render } from "react-dom";
-import './index.css'
-import StateContainer from "./StateContainer";
-import App from "./App";
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Routes from "./Routes";
 
-render(
-  <StateContainer>
-    <App />
-  </StateContainer>,
-  document.getElementById("root")
-);
+ReactDOM.render(<Routes />, document.getElementById("root"));
