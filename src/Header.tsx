@@ -23,16 +23,23 @@ const Header: React.SFC<RouteComponentProps> = props => {
     <header className="header">
       <nav>
         <NavLink
+          to="/accueil"
+          className="header-link"
+          //activeClassName="header-link-active"
+        >
+              Accueil
+        </NavLink>      
+        <NavLink
           to="/simulation"
           className="header-link"
-          activeClassName="header-link-active"
+          //activeClassName="header-link-active"
         >
           Simulation
         </NavLink>
         <NavLink
           to="/admin"
           className="header-link"
-          activeClassName="header-link-active"
+          //activeClassName="header-link-active"
         >
           Admin
         </NavLink>

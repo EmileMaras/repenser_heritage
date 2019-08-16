@@ -15,8 +15,8 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Header from "./Header";
 const AdminPage = React.lazy(() => import("./AdminPage"));
 import SimulationPage from "./SimulationPage";
-import LoginPage from "./LoginPage";
 import NotFoundPage from "./NotFoundPage";
+import AccueilPage from "./accueil/AccueilPage";
 
 const RoutesWrap: React.SFC = () => {
   return (
@@ -38,10 +38,10 @@ const Routes: React.SFC<RouteComponentProps> = props => {
           classNames="animate"
         >
           <Switch>
-            <Redirect exact={true} from="/" to="/simulation" />
+            <Redirect exact={true} from="/" to="/accueil" />
             <Route exact={true} path="/simulation" component={SimulationPage} />
-            <Route path="/admin">
-              {loggedIn ? (
+            <Route exact={true} path="/accueil" component={AccueilPage} />
+            <Route path="/home">
                 <Suspense
                   fallback={<div className="page-container">Loading...</div>}
                 >
@@ -49,9 +49,7 @@ const Routes: React.SFC<RouteComponentProps> = props => {
                 </Suspense>
               ) : (
                 <Redirect to="/login" />
-              )}
             </Route>
-            <Route path="/login" component={LoginPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </CSSTransition>
