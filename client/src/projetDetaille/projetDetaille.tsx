@@ -11,7 +11,7 @@ class ProjetDetaille extends React.Component {
             Et si on mutualisait une partie de l'héritage?
             </h3>
 blablablabla                
-
+            <a href='/afile.pdf' download>Click to download</a>
          </div>
         )
     }
