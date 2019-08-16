@@ -17,6 +17,7 @@ const AdminPage = React.lazy(() => import("./AdminPage"));
 import SimulationPage from "./SimulationPage";
 import NotFoundPage from "./NotFoundPage";
 import AccueilPage from "./accueil/AccueilPage";
+import ProjetDetaille from "./projetDetaille/projetDetaille";
 
 const RoutesWrap: React.SFC = () => {
   return (
@@ -41,15 +42,7 @@ const Routes: React.SFC<RouteComponentProps> = props => {
             <Redirect exact={true} from="/" to="/accueil" />
             <Route exact={true} path="/simulation" component={SimulationPage} />
             <Route exact={true} path="/accueil" component={AccueilPage} />
-            <Route path="/home">
-                <Suspense
-                  fallback={<div className="page-container">Loading...</div>}
-                >
-                  <AdminPage />
-                </Suspense>
-              ) : (
-                <Redirect to="/login" />
-            </Route>
+            <Route exact={true} path="/projetDetaille" component={ProjetDetaille} />
             <Route component={NotFoundPage} />
           </Switch>
         </CSSTransition>
