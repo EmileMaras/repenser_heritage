@@ -7,7 +7,7 @@ app.use(cors());
 // Pdf route that will serve pdf
 
 app.get("/pdf", (req, res) => {
-  var file = fs.createReadStream("./afile.pdf");
+  var file = fs.createReadStream("./RepenserLHeritage.pdf");
   file.pipe(res);
 });
 // console.log that your server is up and running
