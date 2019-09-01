@@ -41,7 +41,7 @@ const initialTodos = [
 ];
 
 
-const heritageBruteData = [
+export const heritageBruteData = [
   { x: 0, h: 0  },
   { x: 10, h: 1001.9267822878209},
   { x: 20, h: 12023},

@@ -1,4 +1,7 @@
 import * as React from "react";
+import {StateConsumer} from '../StateContainer'
+import FigureDistributionBrute from './FigureDistributionBrute'
+
 
 
 class AccueilPage extends React.Component {
@@ -35,10 +38,10 @@ class AccueilPage extends React.Component {
             </h4>
 Il est nécessaire de repenser et de transformer les modes de transmission de l'héritage car :
 <ul>
-  <li> l'héritage représente en moyenne 20 % du revenu total des français </li>
+  <li> l'héritage est important dans la vie des citoyens français: il représente en moyenne environ 20 % de leur revenu total</li>
   <li> l'héritage est très inégalement redistribué </li>  
 </ul>
-
+<FigureDistributionBrute />
          </div>
         )
     }
