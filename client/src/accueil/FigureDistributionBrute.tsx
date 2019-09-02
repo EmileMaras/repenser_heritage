@@ -27,11 +27,11 @@ class FigureDistributionBrute extends React.Component {
           }
 
             ]}
-        style={{ width: '100%', height: '40%' }}
+        style={{ width: '50%', height: '40%' }}
         layout={{
               autosize: true, title: "Distribution de l'héritage", 
               xaxis: {fixedrange: true, range: [0, 100]},
-              yaxis: {fixedrange: false, range: [0, 1400000]}
+              yaxis: {fixedrange: false, range: [0, 1400000],title: 'Montant héritage (€)'}
             }}
       />
     );
