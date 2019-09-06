@@ -39,7 +39,7 @@ Pour des informations plus détaillées (incluant notamment les références) ve
         <button onClick={this.viewHandler}> Télécharger notes détaillés </button>{" "}
       </div> 
             <h4>
-            Définitions    
+            Définitions et remarques   
             </h4>
 <ul>
  <li>                
@@ -58,14 +58,22 @@ Pour des informations plus détaillées (incluant notamment les références) ve
   Le patrimoine d’une personne est constitué de l’ensemble de ses biens et de ses obligations, appréciables en argent, et dans lequel entrent les actifs (valeurs, créances) et les passifs (dettes, engagements). 
  </li>           
 </ul>
+      
+En France, les taxes sur les successions et sur les donations sont en moyenne inférieures à 6%.
+
             <h4>
             Pourquoi repenser les modes de transmission de l'héritage?
             </h4>
 Il est nécessaire de repenser et de transformer les modes de transmission de l'héritage car :
 <ul>
   <li> l'héritage est important dans la vie des citoyens français: il représente en moyenne environ 20 % de leur revenu total</li>
+  <li> le mode actuel de transmission de l'héritage présente deux défauts majeurs:
+    <ul>
   <li> l'héritage est très inégalement redistribué. <i> Voir la section suivante </i></li>
-  <li> il existe des alternatives </li> 
+  <li> les citoyens bénéficient de leur héritage relativement tard dans leur vie: l'âge moyen auquel les français touchent une succession est d'environ 50 ans </li>
+    </ul>
+  </li>
+  <li> des alternatives sont possibles</li> 
 </ul>
             <h4>
             Estimation des inégalités face à l'héritage.
@@ -97,9 +105,12 @@ De plus plusieurs facteurs amplifient ces inégalités :
     
   </ul>          
 
+            <h4>
+            Et si on mutualisait une partie de l'héritage?    
+            </h4>
+Il est possible de réformer les modes de transmission de l'héritage afin de diminuer les inégalités.
 
-
-       
+Lorsqu'un individu reçoit une donation ou une succession, une partie de la valeur de ce qu'il touche est mutualisé (i.e.   
          </div>
         )
     }
