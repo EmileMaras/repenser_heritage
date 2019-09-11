@@ -4,6 +4,14 @@ import FigureDistributionBrute from './FigureDistributionBrute'
 import axios from "axios";
 
 
+const Taux = [
+  { id: 1, tranche: 100000, taux: 20 },
+  { id: 2, tranche: 250000, taux: 40},
+  { id: 3, tranche: 500000, taux: 60},
+  { id: 4, tranche: 750000, taux: 80},
+  { id: 5, tranche: 1000000, taux: 95}
+];
+
 class AccueilPage extends React.Component {
   viewHandler = async () => {
     axios(`http://localhost:4000/pdf`, {
@@ -109,8 +117,68 @@ De plus plusieurs facteurs amplifient ces inégalités :
             Et si on mutualisait une partie de l'héritage?    
             </h4>
 Il est possible de réformer les modes de transmission de l'héritage afin de diminuer les inégalités.
+On pourrait par exemple mutualiser une partie de l'héritage selon les principes suivants :
+à chaque fois qu'une personne bénéficie d'un héritage par donnation ou succession, une partie de cet héritage est mutualisée afin d'être redistribué équitablement au sein de la population. 
+Le taux de mutualisation dépend uniquement de la valeur cumulée de l'ensemble des héritages dont cette personne a bénéficiée et augmente progressivement par tranche.   
 
-Lorsqu'un individu reçoit une donation ou une succession, une partie de la valeur de ce qu'il touche est mutualisé (i.e.   
+L'argent ainsi récolté alimente la caisse nationale des héritages. A la fin de chaque année fiscale, l'argent accumulé serait divisé en parts et redistribué. 
+Le nombre de parts distribuées serait proportionnel au nombre de décès. 
+Chaque citoyen pourrait à partir de sa majorité demander quand il le souhaite à toucher sa part d'héritage. Il ne pourrait toucher qu'une seule part au court de sa vie. Il pourrait demander à toucher sa part intégralement en une fois ou il pourrait demander à la toucher en plusieurs fois.
+
+A la mise en place d'une telle réforme, la majorité des citoyens n'aurait pas encore touché leur part d'héritage. 
+Il y aurait donc initialement bien plus de demandeurs que de parts disponibles. 
+Les demandeurs sont sélectionnés en commencant par les plus âgés jusqu'à ce que toutes les parts disponibles soient distribuée.
+Les demandeux restant ne peuvent pas toucher leur part d'héritage cette année là et doivent renouveler leur demande ultérieurement.
+        
+Afin de faire dimininuer progressivement l'âge moyen auquel les gens peuvent toucher leur part d'héritage mutualisé, 
+le nombre de parts distribuées serait initialement suppérieur au nombre de décès. 
+On pourrait par exemple fixer le nombre de parts à 1,5 fois le nombre de décès ce qui permet de faire dimininuer chaque année 
+        d'environ 6 mois l'âge moyen auquel les citoyens peuvent toucher leur part d'héritage mutualisé 
+
+A long terme, pour une population stable, il y aurait en moyenne autant de demandeurs que de décès et il y aurait autant de parts distribuées que de demandeurs.
+
+
+Afin d'illustrer le principe, je propose les taux suivants qui selon mon opinion personnel permettrait d'avoir un bon équilibre entre héritage ``filial'' et héritage mutualisé.  Après un abattement de 100 000 euros, le taux sur les tranches supplémentaires augmenterait progressivement de 20% à 95% tel que présenté dans le tableau suivant:
+    <div>
+      <table >
+           <col width="70%"/>
+           <col width="30%"/>
+        <thead>
+          <tr>
+            <th>Début tranche (€)</th>
+            <th>Taux (%)</th>
+          </tr>
+        </thead>
+        <tbody>        
+            <tr key={Taux[0].id}>
+                <td>{Taux[0].tranche}</td>
+                <td>{Taux[0].taux}</td>
+            </tr>          
+            <tr key={Taux[1].id}>
+                <td>{Taux[1].tranche}</td>
+                <td>{Taux[1].taux}</td>
+            </tr>  
+            <tr key={Taux[2].id}>
+                <td>{Taux[2].tranche}</td>
+                <td>{Taux[2].taux}</td>
+            </tr>  
+            <tr key={Taux[3].id}>
+                <td>{Taux[3].tranche}</td>
+                <td>{Taux[3].taux}</td>
+            </tr>  
+            <tr key={Taux[4].id}>
+                <td>{Taux[4].tranche}</td>
+                <td>{Taux[4].taux}</td>
+            </tr>  
+        </tbody>
+      </table>
+    </div>
+
+        
+        
+Je précise également que cette contribution à la mutualisation remplacerait les taxes sur les successions et donations qui existent actuellement.
+
+Les taux de mutualisation devraient être fixés après avoir été débatus au sein de la société. 
          </div>
         )
     }
