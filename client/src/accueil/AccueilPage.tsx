@@ -167,7 +167,11 @@ Afin d'illustrer le principe, je propose les taux suivants qui selon mon opinion
     </div>
 Je précise également que cette contribution à la mutualisation remplacerait les taxes sur les successions et donations qui existent actuellement. 
 Afin de ne pas faire de trou dans le budget de l'état, un montant équivalent à ce qui est acutuellement perçu sur les taxes sur les donations et succession serait prélevé par l'état dans la caisse nationale des héritages.
-        
+
+La figure suivante présente la distribution actuelle de l'héritage (rouge) ainsi que celle résultant d'une telle réforme (bleu).
+Avec les taux de mutualisation proposés, l'héritage mutualisé représenterait environ 50% de l'héritage totale.
+On estime qu'une part d'héritage mutualisée serait d'environ 130 000 euros. 
+Cette réforme serait bénéficiaire pour plus de 80% des citoyens (puisque la valeur d'une part d'héritage mutualisée serait plus importante que leur contribution à la mutualisation).
 <FigureDistribution />        
 
 

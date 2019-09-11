@@ -40,6 +40,7 @@ export const initialTodos = [
   { id: 5, tranche: 1000000, taux: 95}
 ];
 
+export const ratioPartDecesIni  = 1.5;
 
 export const heritageBruteData = [
   { x: 0, h: 0  },
@@ -178,7 +179,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
       heritageBrute: heritageBruteData,
       heritageNet: ret.heritageNet,
       heritageMutualiseTotal: ret.heritageMutualiseTotal,
-      ratioPartDeces: 1.5
+      ratioPartDeces: ratioPartDecesIni 
     };
   }
 

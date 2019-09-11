@@ -1,7 +1,7 @@
 import * as React from "react";
 import Plot from 'react-plotly.js';
 import { IHeritage } from '../types';
-import {heritageBruteData, initialTodos, updateHeritage, IReturn} from '../StateContainer';
+import {heritageBruteData, initialTodos, updateHeritage, IReturn, ratioPartDecesIni } from '../StateContainer';
 
 class FigureDistribution extends React.Component {
 
@@ -9,7 +9,7 @@ class FigureDistribution extends React.Component {
   public render() {
     var ret: IReturn = updateHeritage(initialTodos, heritageBruteData)
     var heritageNet:IHeritage[] =  ret.heritageNet
-      
+    var heritageMutualiseTotal: number = ret.heritageMutualiseTotal
     var xvalue: number[] = [];
     var yvalue: number[] = [];
     var xvalue2: number[] = [];
@@ -24,7 +24,7 @@ class FigureDistribution extends React.Component {
 
     for (let heritage of heritageNet){
         xvalue2.push(heritage.x)
-        yvalue2.push(heritage.h)
+        yvalue2.push(heritage.h  + heritageMutualiseTotal * (1. / ratioPartDecesIni  - 1.))
     }    
       
     //xvalue2.push(100)
@@ -47,7 +47,7 @@ class FigureDistribution extends React.Component {
             type: 'scatter',
             mode: 'lines',
             marker: {color: 'blue'},
-            name: "Distribution partiellement mutualisée" //<br> 1,5 fois plus de parts que de décès"
+            name: "Distribution avec une mutualisation" //<br> 1,5 fois plus de parts que de décès"
           }        
 
             ]}
