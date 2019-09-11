@@ -32,7 +32,7 @@ interface IContext {
   };
 }
 
-const initialTodos = [
+export const initialTodos = [
   { id: 1, tranche: 100000, taux: 20 },
   { id: 2, tranche: 250000, taux: 40},
   { id: 3, tranche: 500000, taux: 60},
@@ -66,7 +66,7 @@ export interface IReturn {
     heritageMutualiseTotal: number,
     heritageNet: IHeritage[]
 }
-function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
+export function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IReturn {
     var heritageNew: IHeritage[] = [{x: 0, h: 0}];
     var iTranche: number = -1;
     var iHeritageBrute: number = 0;

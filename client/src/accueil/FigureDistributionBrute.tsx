@@ -2,10 +2,12 @@ import * as React from "react";
 import Plot from 'react-plotly.js';
 import { IHeritage } from '../types';
 import {heritageBruteData} from '../StateContainer';
-class FigureDistributionBrute extends React.Component {
 
+
+
+class FigureDistributionBrute extends React.Component {
       
-  public render() {
+  public render() {      
     var xvalue: number[] = [];
     var yvalue: number[] = [];
     for (let heritage of heritageBruteData){
@@ -14,6 +16,7 @@ class FigureDistributionBrute extends React.Component {
     }    
     xvalue.push(100)
     yvalue.push(16000000000)
+    
     return (
       <Plot
         data={[

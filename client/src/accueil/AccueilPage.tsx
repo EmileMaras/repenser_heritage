@@ -1,16 +1,8 @@
 import * as React from "react";
-import {StateConsumer} from '../StateContainer'
+import {StateConsumer, initialTodos} from '../StateContainer'
 import FigureDistributionBrute from './FigureDistributionBrute'
+import FigureDistribution from './FigureMutualisee'
 import axios from "axios";
-
-
-const Taux = [
-  { id: 1, tranche: 100000, taux: 20 },
-  { id: 2, tranche: 250000, taux: 40},
-  { id: 3, tranche: 500000, taux: 60},
-  { id: 4, tranche: 750000, taux: 80},
-  { id: 5, tranche: 1000000, taux: 95}
-];
 
 class AccueilPage extends React.Component {
   viewHandler = async () => {
@@ -150,34 +142,36 @@ Afin d'illustrer le principe, je propose les taux suivants qui selon mon opinion
           </tr>
         </thead>
         <tbody>        
-            <tr key={Taux[0].id}>
-                <td>{Taux[0].tranche}</td>
-                <td>{Taux[0].taux}</td>
+            <tr key={initialTodos[0].id}>
+                <td>{initialTodos[0].tranche}</td>
+                <td>{initialTodos[0].taux}</td>
             </tr>          
-            <tr key={Taux[1].id}>
-                <td>{Taux[1].tranche}</td>
-                <td>{Taux[1].taux}</td>
+            <tr key={initialTodos[1].id}>
+                <td>{initialTodos[1].tranche}</td>
+                <td>{initialTodos[1].taux}</td>
             </tr>  
-            <tr key={Taux[2].id}>
-                <td>{Taux[2].tranche}</td>
-                <td>{Taux[2].taux}</td>
+            <tr key={initialTodos[2].id}>
+                <td>{initialTodos[2].tranche}</td>
+                <td>{initialTodos[2].taux}</td>
             </tr>  
-            <tr key={Taux[3].id}>
-                <td>{Taux[3].tranche}</td>
-                <td>{Taux[3].taux}</td>
+            <tr key={initialTodos[3].id}>
+                <td>{initialTodos[3].tranche}</td>
+                <td>{initialTodos[3].taux}</td>
             </tr>  
-            <tr key={Taux[4].id}>
-                <td>{Taux[4].tranche}</td>
-                <td>{Taux[4].taux}</td>
+            <tr key={initialTodos[4].id}>
+                <td>{initialTodos[4].tranche}</td>
+                <td>{initialTodos[4].taux}</td>
             </tr>  
         </tbody>
       </table>
     </div>
+Je précise également que cette contribution à la mutualisation remplacerait les taxes sur les successions et donations qui existent actuellement. 
+Afin de ne pas faire de trou dans le budget de l'état, un montant équivalent à ce qui est acutuellement perçu sur les taxes sur les donations et succession serait prélevé par l'état dans la caisse nationale des héritages.
+        
+<FigureDistribution />        
+
 
         
-        
-Je précise également que cette contribution à la mutualisation remplacerait les taxes sur les successions et donations qui existent actuellement.
-
 Les taux de mutualisation devraient être fixés après avoir été débatus au sein de la société. 
          </div>
         )
