@@ -10,6 +10,7 @@ export interface ITodos{
 class Figure extends React.Component<ITodos , {}> {
 
       
+    
   public render() {
     var xvalue: number[] = [0];
     var yvalue: number[] = [0];
