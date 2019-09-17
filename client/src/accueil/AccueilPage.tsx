@@ -30,14 +30,14 @@ class AccueilPage extends React.Component {
 
     render(){
         return(
-         <div>
+        <div className="blocktext">
             <h3>
             Repensons (les modes de transmission de) l'héritage?
             </h3>
 Cette page fait un résumé des inégalités résultant du mode actuel de transmission de l'héritage et présente le principe d'une mutualisation partielle de l'héritage.
 Pour des informations plus détaillées (incluant notamment les références) veuillez télécharger le document suivant:
       <div>
-        <button onClick={this.viewHandler}> Télécharger notes détaillés </button>{" "}
+        <button onClick={this.viewHandler}> Télécharger des notes détaillés </button>{" "}
       </div> 
             <h4>
             Définitions et remarques   
@@ -99,9 +99,9 @@ AJOUTER UNE COMPARAISON.
     </li> 
     
   </ul>
-De plus plusieurs facteurs amplifient ces inégalités :
+Les inégalités présentées précédemment sont amplifiées par les facteurs suivants:
   <ul>
-    <li> en moyenne, plus une personne bénéficie d'un gros héritage plus son salaire est important. Cela s'explique en partie par le fait que les personnes qui transmettent un héritage important à leurs enfants ont généralement été en mesure de les aider financièrement pendant leurs études.</li>
+    <li> en moyenne, plus une personne bénéficie d'un héritage conséquent plus son salaire est important. Cela s'explique en partie par le fait que les personnes qui transmettent un héritage important à leurs enfants ont généralement été en mesure de les aider financièrement pendant leurs études.</li>
     <li> un héritage peut rapporter un revenu fixe. Quelqu'un qui hérite d'un appartement peut par exemple le louer et en obtenir un revenu.</li>
     
   </ul>          
@@ -109,30 +109,19 @@ De plus plusieurs facteurs amplifient ces inégalités :
             <h4>
             Et si on mutualisait une partie de l'héritage?    
             </h4>
-Il est possible de réformer les modes de transmission de l'héritage afin de diminuer les inégalités.
-On pourrait par exemple mutualiser une partie de l'héritage selon les principes suivants :
-à chaque fois qu'une personne bénéficie d'un héritage par donnation ou succession, une partie de cet héritage est mutualisé afin d'être redistribué équitablement au sein de la population. 
-Le taux de mutualisation dépend uniquement de la valeur cumulée de l'ensemble des héritages dont cette personne a bénéficiée et augmente progressivement par tranche.   
-
-L'argent ainsi récolté alimente la caisse nationale des héritages. A la fin de chaque année fiscale, l'argent accumulé serait divisé en parts et redistribué. 
-Le nombre de parts distribuées serait proportionnel au nombre de décès. 
-Chaque citoyen pourrait à partir de sa majorité demander quand il le souhaite à toucher sa part d'héritage. Il ne pourrait toucher qu'une seule part au court de sa vie. Il pourrait demander à toucher sa part intégralement en une fois ou il pourrait demander à la toucher en plusieurs fois.
-
-A la mise en place d'une telle réforme, la majorité des citoyens n'ont pas encore touché leur part d'héritage. 
-Il y aurait donc initialement bien plus de demandeurs que de parts disponibles. 
-Les demandeurs sont sélectionnés en commencant par les plus âgés jusqu'à ce que toutes les parts disponibles soient distribuées.
-Les demandeux restants ne peuvent pas toucher leur part d'héritage cette année là et doivent renouveler leur demande ultérieurement.
+<div>Il est possible de réformer les modes de transmission de l'héritage afin de diminuer les inégalités.
+</div> 
+On pourrait par exemple utiliser un principe de mutualisation, redistribution. 
+        <h5> Mutualisation </h5>
         
-Afin de faire dimininuer progressivement l'âge moyen auquel les gens peuvent toucher leur part d'héritage mutualisé, 
-le nombre de parts distribuées serait initialement suppérieur au nombre de décès. 
-On peut par exemple fixer le nombre de parts à 1,5 fois le nombre de décès ce qui permet de faire dimininuer chaque année 
-        d'environ 6 mois l'âge moyen auquel les citoyens peuvent toucher leur part d'héritage mutualisé 
-
-A long terme, pour une population stable, il y aurait en moyenne autant de demandeurs que de décès et il y aurait autant de parts distribuées que de demandeurs.
-
-
-Afin d'illustrer le principe, je propose les taux suivants qui selon mon opinion personnel permettrait d'avoir un bon équilibre entre héritage ``filial'' et héritage mutualisé.  Après un abattement de 100 000 euros, le taux sur les tranches supplémentaires augmenterait progressivement de 20% à 95% tel que présenté dans le tableau suivant:
-    <div>
+A chaque fois qu'une personne bénéficie d'un héritage par donnation ou succession, 
+la valeur de l'héritage est estimée et le bénéficiaire doit s'acquiter d'un montant proportionnel à cette valeur selon un taux de mutualisation fixé légalement. 
+Ce taux de mutualisation dépend uniquement de la valeur cumulée de l'ensemble des héritages dont cette personne a bénéficiée au court de sa vie et augmente progressivement par tranche.   
+Afin d'illustrer le principe, je propose les taux suivants.  Après un abattement de 100 000 euros, le taux sur les tranches supplémentaires augmenterait progressivement de 20% à 95% tel que présenté dans le tableau suivant (<i>le principe de  mutualisation par tranche peut être illustrée par l'exemple 
+<span title=" A 30 ans Paul bénéficie pour la première fois d'une donation de 80 000 euros. Ce montant étant inférieur à 100 000 euros, il ne contribue pas à la mutualisation et touche l'intégralité des 80 000 euros. Cinq ans plus tard, il bénéficie encore d'une donation de 80 000 euros brut. Le montant cumulé brut dont il a bénéficié est de 160 000 euros. Ce montant dépasse la première tranche de 60 000 euros. Il y a un taux de mutualisation de 20% dans cette tranche, il doit donc contribuer à la mutualisation de l'héritage à hauteur de 12 000 euros. Le montant net qu'il recevra suite à cette deuxième donation sera donc de 68 000 euros. Quelques années plus tard, il bénéficie d'une succession de 300 000 euros. Le montant cumulé qu'il avait perçu précédemment était de 160 000 euros. Il doit donc s'affranchir d'un taux de 20% sur 90 000 pour compléter la première tranche (fin de tranche à 250 000 euros), puis d'un taux de 40% sur les 210 000 euros suivant. Il doit donc contribuer à la mutualisation de l'héritage à hauteur de 90 000 x 0,2 + 210 000 x 0,4 = 91 200 euros."> <dt> suivant. </dt> </span>
+</i>):
+   <div>     
+    <div className="third-container-no-border">
       <table >
            <col width="70%"/>
            <col width="30%"/>
@@ -166,20 +155,45 @@ Afin d'illustrer le principe, je propose les taux suivants qui selon mon opinion
         </tbody>
       </table>
     </div>
+   </div>
 Je précise également que cette contribution à la mutualisation remplace les taxes sur les successions et donations qui existent actuellement. 
 Afin de ne pas faire de trou dans le budget de l'état, un montant équivalent à ce qui est acutuellement perçu sur les taxes sur les donations et succession est prélevé par l'état dans la caisse nationale des héritages.
+L'argent ainsi récolté alimente la caisse nationale des héritages. 
 
+        <h5> Redistribution</h5>
+A la fin de chaque année fiscale, l'argent accumulé est divisé en parts et redistribué. 
+Le nombre de parts distribuées est proportionnel au nombre de décès. 
+Chaque citoyen peut à partir de sa majorité demander quand il le souhaite à toucher sa part d'héritage. Il ne pourrait toucher qu'une seule part au court de sa vie. Il pourrait demander à toucher sa part intégralement en une fois ou il peut demander à la toucher en plusieurs fois.
+
+A la mise en place d'une telle réforme, la majorité des citoyens n'ont pas encore touché leur part d'héritage. 
+Il y aurait donc initialement bien plus de demandeurs que de parts disponibles. 
+Les demandeurs sont sélectionnés en commencant par les plus âgés jusqu'à ce que toutes les parts disponibles soient distribuées.
+Les demandeux restants ne peuvent pas toucher leur part d'héritage cette année là et doivent renouveler leur demande ultérieurement.
+        
+Afin de faire dimininuer progressivement l'âge moyen auquel les gens peuvent toucher leur part d'héritage mutualisé, 
+le nombre de parts distribuées serait initialement suppérieur au nombre de décès. 
+On peut par exemple fixer le nombre de parts à 1,5 fois le nombre de décès ce qui permet de faire dimininuer chaque année 
+        d'environ 6 mois l'âge moyen auquel les citoyens peuvent toucher leur part d'héritage mutualisé 
+
+A long terme, pour une population stable, il y aurait en moyenne autant de demandeurs que de décès et il y aurait autant de parts distribuées que de demandeurs.
+
+
+<h5> Conséquences sur la distribution de l'héritage </h5>
 La figure suivante présente la distribution actuelle de l'héritage (rouge) ainsi que celle résultant d'une telle réforme (bleu).
 Avec les taux de mutualisation proposés, l'héritage mutualisé représenterait environ 50% de l'héritage totale.
 On estime qu'une part d'héritage mutualisée serait d'environ 130 000 euros. 
 Cette réforme serait bénéficiaire pour plus de 80% des citoyens (puisque la valeur d'une part d'héritage mutualisée serait plus importante que leur contribution à la mutualisation).
 <FigureDistribution />        
 
+<h5> Fixons collectivement les taux de mutualisation</h5> 
 
-        
-Les taux de mutualisation devraient être fixés après avoir été débatus au sein de la société. 
-Afin que chacun puisse se faire sa propre idée sur les taux de mutualisation qui lui semble juste, 
-un simulateur vous permet de voir quelle serait la distribution de l'héritage en fonction des taux de mutualisation que vous aurez choisis :
+Il y a deux aspirations fondamentales et antagonistes face au choix du mode de transmission de l'héritage.
+Il y a d'un côté une aspiration au maintien du patrimoine dans le cercle familial et de l'autre une aspiration à l'égalité entre citoyens. Nous sommes actuellement dans un système qui favorise très largement la première aspiration au détriment de la deuxième. 
+En ajustant les taux de mutualisation on peut trouver un "équilibre" entre ces deux aspirations.
+Les taux que j'ai proposés ici permettent selon moi d'avoir un tel équilibre, mais personne n'a la légitimité de fixer seul cet équilibre.                 
+Il est nécessaire d'avoir un débat afin de fixer collectivement les taux de mutualisation.
+Afin que chacun puisse se faire sa propre idée sur les taux de mutualisation qui lui semblent juste, 
+un simulateur permettant de calculer la distribution de l'héritage en fonction des taux de mutualisation est mis à votre disposition ici:
         
 <nav>
     <NavLink
@@ -190,8 +204,7 @@ un simulateur vous permet de voir quelle serait la distribution de l'héritage e
     Lien vers le simulateur
     </NavLink>
 </nav>
-         </div>        
-
+        </div>
         )
     }
 }
