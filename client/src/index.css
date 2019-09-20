@@ -735,7 +735,7 @@ code {
   text-align: center;
   background-color: #222;
   height: 60px;
-  padding: 20px;
+  padding: 10px;
   color: white;
 }
 
@@ -754,13 +754,14 @@ code {
 }
 
 .header-title {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .header-link {
   color: #fff;
   text-decoration: none;
   padding: 40px;
+  font-size: 1.5em;
 }
 
 /* .header-link-active { */
