@@ -350,14 +350,14 @@ dd {
 .third-container {
   float:left;
   max-width: 33%;
-  padding: 0 1rem; 
-  border: 1px solid #0366EE;}
+  padding: 0 1rem;} 
+ 
 
 .two-third-container {
   float:left;
   max-width: 67%;
   padding: 0 1rem;
-  border: 1px solid #0366EE;}
+  border-left: 3px solid #0366EE;}
     
 .container, .small-container, .medium-container {
   max-width: 1200px;
@@ -760,7 +760,7 @@ code {
 .header-link {
   color: #fff;
   text-decoration: none;
-  padding: 5px;
+  padding: 40px;
 }
 
 .header-link-active {

@@ -37,7 +37,7 @@ class AccueilPage extends React.Component {
 Cette page fait un résumé des inégalités résultant du mode actuel de transmission de l'héritage et présente le principe d'une mutualisation partielle de l'héritage.
 Pour des informations plus détaillées (incluant notamment les références) veuillez télécharger le document suivant:
       <div>
-        <button onClick={this.viewHandler}> Télécharger des notes détaillés </button>{" "}
+        <button onClick={this.viewHandler}> Télécharger le document détaillé </button>{" "}
       </div> 
             <h4>
             Définitions et remarques   
@@ -80,16 +80,16 @@ Il est nécessaire de repenser et de transformer les modes de transmission de l'
             Estimation des inégalités face à l'héritage.
             </h4>
         
-La figure suivante représente une estimation de la distribution des héritages. 
-   <i> Lecture : 50% de la population héritera de moins de 150 289 euros, 50% héritera de plus. </i>  
+La figure suivante représente une estimation de la distribution des héritages en France. 
+   <i> Lecture : 50% de la population française héritera de moins de 150 289 euros, 50% héritera de plus. </i>  
 <FigureDistributionBrute />
   <div>     
 <b> Avertissement :</b> estimer la distribution de l'héritage est un exercice complexe. 
-Cette figure est obtenue à partir d'une modélisation basée sur une enquête. 
-Comme dans toute modélisation, il y a des hypothèses simplificatrices qui sont faites et je ne prétend pas fournir une estimation précise.
+Cette figure est obtenue à partir d'une modélisation. Il est légitime de questionner à la fois les sources sur lesquelles s'appuie cette modélisation ainsi que les hypothèses simplificatrices qui sont faites.
+
 Néenmoins, cette distribution est, à ma connaissance, la plus fiable et permet de se faire une bonne idée sur l'ordre de grandeur des inégalités face à l'héritage. 
   </div>         
-Quelques remarques sur cette distribution de l'héritage: 
+<b>Quelques remarques sur cette distribution de l'héritage:</b> 
   <ul>
     <li> 10% de la population héritera de moins de 1100 euros </li>
     <li> 20% de la population héritera de moins de 13 000 euros </li>
@@ -111,10 +111,10 @@ Les inégalités présentées précédemment sont amplifiées par les facteurs s
             </h4>
 <div>Il est possible de réformer les modes de transmission de l'héritage afin de diminuer les inégalités.
 </div> 
-On pourrait par exemple utiliser un principe de mutualisation, redistribution. 
+On pourrait par exemple utiliser le principe de mutualisation-redistribution suivant. 
         <h5> Mutualisation </h5>
         
-A chaque fois qu'une personne bénéficie d'un héritage par donnation ou succession, 
+A chaque fois qu'une personne bénéficie d'un héritage par donation ou succession, 
 la valeur de l'héritage est estimée et le bénéficiaire doit s'acquiter d'un montant proportionnel à cette valeur selon un taux de mutualisation fixé légalement. 
 Ce taux de mutualisation dépend uniquement de la valeur cumulée de l'ensemble des héritages dont cette personne a bénéficiée au court de sa vie et augmente progressivement par tranche.   
 Afin d'illustrer le principe, je propose les taux suivants.  Après un abattement de 100 000 euros, le taux sur les tranches supplémentaires augmenterait progressivement de 20% à 95% tel que présenté dans le tableau suivant (<i>le principe de  mutualisation par tranche peut être illustrée par l'exemple 
@@ -161,19 +161,19 @@ Afin de ne pas faire de trou dans le budget de l'état, un montant équivalent �
 L'argent ainsi récolté alimente la caisse nationale des héritages. 
 
         <h5> Redistribution</h5>
-A la fin de chaque année fiscale, l'argent accumulé est divisé en parts et redistribué. 
+A la fin de chaque année fiscale, l'argent ainsi accumulé est divisé en parts et redistribué. 
 Le nombre de parts distribuées est proportionnel au nombre de décès. 
-Chaque citoyen peut à partir de sa majorité demander quand il le souhaite à toucher sa part d'héritage. Il ne pourrait toucher qu'une seule part au court de sa vie. Il pourrait demander à toucher sa part intégralement en une fois ou il peut demander à la toucher en plusieurs fois.
+Chaque citoyen peut à partir de sa majorité demander quand il le souhaite à toucher sa part d'héritage. Il ne peut toucher qu'une seule part au court de sa vie. Il peut demander à toucher sa part intégralement en une fois ou il peut demander à la toucher en plusieurs fois.
 
 A la mise en place d'une telle réforme, la majorité des citoyens n'ont pas encore touché leur part d'héritage. 
 Il y aurait donc initialement bien plus de demandeurs que de parts disponibles. 
 Les demandeurs sont sélectionnés en commencant par les plus âgés jusqu'à ce que toutes les parts disponibles soient distribuées.
-Les demandeux restants ne peuvent pas toucher leur part d'héritage cette année là et doivent renouveler leur demande ultérieurement.
+Les demandeurs restants ne peuvent pas toucher leur part d'héritage cette année là et doivent renouveler leur demande ultérieurement.
         
 Afin de faire dimininuer progressivement l'âge moyen auquel les gens peuvent toucher leur part d'héritage mutualisé, 
 le nombre de parts distribuées serait initialement suppérieur au nombre de décès. 
 On peut par exemple fixer le nombre de parts à 1,5 fois le nombre de décès ce qui permet de faire dimininuer chaque année 
-        d'environ 6 mois l'âge moyen auquel les citoyens peuvent toucher leur part d'héritage mutualisé 
+        d'environ 6 mois l'âge moyen auquel les citoyens peuvent toucher leur part d'héritage mutualisé. 
 
 A long terme, pour une population stable, il y aurait en moyenne autant de demandeurs que de décès et il y aurait autant de parts distribuées que de demandeurs.
 
