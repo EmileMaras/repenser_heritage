@@ -37,11 +37,11 @@ const Header: React.SFC<RouteComponentProps> = props => {
           Simulateur
         </NavLink>
         <NavLink
-          to="/projetDetaille"
+          to="/biblio"
           className="header-link"
           activeClassName="header-link-active"
         >
-          Principe détaillé
+          Bibliographie
         </NavLink>
       </nav>
     </header>

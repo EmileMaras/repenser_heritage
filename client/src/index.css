@@ -763,9 +763,9 @@ code {
   padding: 40px;
 }
 
-.header-link-active {
-  border-bottom: #ebebeb solid 2px;
-}
+/* .header-link-active { */
+/*   border-bottom: #ebebeb solid 2px; */
+/* } */
 
 .product-list-item a {
   text-decoration: none;
