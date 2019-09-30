@@ -1,5 +1,6 @@
 {
   "name": "reactshop",
+  "homepage": "http://repensonslheritage.eu",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
