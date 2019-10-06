@@ -14,12 +14,14 @@ class FigureDistribution extends React.Component<ITodos , {}> {
   public render() {
     var xvalue: number[] = [];
     var yvalue: number[] = [];
+    var yvalue_in_smic: number[] = [];
     var xvalue2: number[] = [];
     var yvalue2: number[] = [];
     var yvalue3: number[] = [];
     for (let heritage of this.props.hBrute){
         xvalue.push(heritage.x)
         yvalue.push(heritage.h)
+        yvalue_in_smic.push(heritage.h/14100)
     }    
     for (let heritage of this.props.hNet){
         xvalue2.push(heritage.x)
@@ -35,31 +37,41 @@ class FigureDistribution extends React.Component<ITodos , {}> {
             type: 'scatter',
             mode: 'lines',
             marker: {color: 'red'},
-            name: 'Distribution actuelle'
+            name: 'Distribution actuelle',
+            yaxis: 'y'
           },
-//          {
-//            x: xvalue2,
-//            y: yvalue2,
-//            type: 'scatter',
-//            mode: 'lines',
-//            marker: {color: 'green'},
-//            name: "Distribution partiellement mutualisée <br> autant de parts que de décès"
-//          },
+          {
+            x: xvalue,
+            y: yvalue_in_smic,
+            type: 'scatter',
+            mode: 'lines',
+            marker: {color: 'red'},
+            name: 'foo',
+            //showlegend: false,
+            yaxis: 'y2'
+          },
           {
             x: xvalue2,
             y: yvalue3,
             type: 'scatter',
             mode: 'lines',
             marker: {color: 'blue'},
-            name: "Distribution partiellement mutualisée" //<br> 1,5 fois plus de parts que de décès"
+            name: "Distribution partiellement mutualisée", //<br> 1,5 fois plus de parts que de décès"
+            yaxis: 'y1'
           }
             ]}
         style={{ width: '100%', height: '40%' }}
         layout={{
               autosize: true, title: "Distribution de l'héritage", 
               xaxis: {fixedrange: true, range: [0, 100]},
-              yaxis: {fixedrange: false, range: [0, 1400000],title: 'Montant héritage (€)'}
-            }}
+              yaxis: {fixedrange: false, range: [0, 1400000],title: 'Montant héritage (€)'},
+              yaxis2: {fixedrange: false, range: [0, 1400000/14100],title: 'Montant héritage (années de SMIC)',side: 'right'}
+//              yaxis3: {fixedrange: false, range: [0, 1400000],title: 'Montant héritage (€)'}
+
+
+
+            }
+          }
       />
     );
   }
