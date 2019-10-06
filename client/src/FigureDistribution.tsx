@@ -37,8 +37,7 @@ class FigureDistribution extends React.Component<ITodos , {}> {
             type: 'scatter',
             mode: 'lines',
             marker: {color: 'red'},
-            name: 'Distribution actuelle',
-            yaxis: 'y'
+            name: 'Distribution actuelle'
           },
           {
             x: xvalue,
@@ -57,16 +56,16 @@ class FigureDistribution extends React.Component<ITodos , {}> {
             mode: 'lines',
             marker: {color: 'blue'},
             name: "Distribution partiellement mutualisée", //<br> 1,5 fois plus de parts que de décès"
-            yaxis: 'y1'
+            yaxis: 'y3'
           }
             ]}
         style={{ width: '100%', height: '40%' }}
         layout={{
               autosize: true, title: "Distribution de l'héritage", 
               xaxis: {fixedrange: true, range: [0, 100]},
-              yaxis: {fixedrange: false, range: [0, 1400000],title: 'Montant héritage (€)'},
-              yaxis2: {fixedrange: false, range: [0, 1400000/14100],title: 'Montant héritage (années de SMIC)',side: 'right'}
-//              yaxis3: {fixedrange: false, range: [0, 1400000],title: 'Montant héritage (€)'}
+              yaxis: {fixedrange: false, range: [0, 1400000], overlaying: 'y', title: 'Montant héritage (€)'},
+              yaxis2: {fixedrange: false, range: [0, 1400000/14100], overlaying: 'y',title: 'Montant héritage (années de SMIC)',side: 'right'},
+              yaxis3: {fixedrange: false, range: [0, 1400000], overlaying: 'y',title: 'Montant héritage (€)'}
 
 
 
