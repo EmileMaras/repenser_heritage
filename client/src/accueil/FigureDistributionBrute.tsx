@@ -6,7 +6,7 @@ import {heritageBruteData} from '../StateContainer';
 
 
 class FigureDistributionBrute extends React.Component {
-      
+
   public render() {      
     var xvalue: number[] = [];
     var yvalue: number[] = [];
@@ -16,7 +16,7 @@ class FigureDistributionBrute extends React.Component {
     }    
     xvalue.push(100)
     yvalue.push(16000000000)
-    
+
     return (
       <Plot
         data={[
@@ -30,7 +30,7 @@ class FigureDistributionBrute extends React.Component {
           }
 
             ]}
-        style={{ width: '50%', height: '40%' }}
+        style={{ width: 600, height: '40%' }}
         layout={{
               autosize: true, title: "Distribution de l'héritage", 
               xaxis: {fixedrange: true, range: [0, 100]},

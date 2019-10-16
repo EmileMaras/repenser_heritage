@@ -6,9 +6,21 @@ import TodoInputContainer from './TodoInputContainer';
 import Figure from './Figure';
 import FigureDistribution from './FigureDistribution';
 
-export default () => (
- <div>
-  <div className="third-container">
+function get_css_style_from_width(w:number){
+  var name ="third-container"
+  if (w<800){
+    name = "two-third-container"
+  }
+  return name
+}
+
+export default () => {
+
+  
+  return (
+<StateConsumer>
+{({state, actions }) => (<div>
+  <div className={get_css_style_from_width(state.width)}>
     <h3>
     Choisissez les taux de mutualisation
     </h3>
@@ -19,8 +31,7 @@ export default () => (
     <h3>
     Visualisez les conséquences sur la distribution de l'héritage
     </h3>
-    <StateConsumer>
-       {({state, actions }) => (
+
         <div>
          <h5> 
          - Une part d'héritage mutualisé serait  
@@ -32,25 +43,22 @@ export default () => (
          % de l'héritage total. 
          </h5>
         </div>
-        )}
-    </StateConsumer>
-    <StateConsumer>
-       {({state, actions }) => (
+
+
 <FigureDistribution 
    hBrute={state.heritageBrute} 
    hNet={state.heritageNet} 
    hMut={state.heritageMutualiseTotal} 
    ratioPartDeces={state.ratioPartDeces}
-/>)}
-    </StateConsumer>
-    <StateConsumer>
-        {({state, actions }) => (
-        <Figure 
-            todoData={state.todos} 
-            heritageMutualiseTotal={state.heritageMutualiseTotal}
-            ratioPartDeces={state.ratioPartDeces}
-        />)}
-    </StateConsumer>
+/>
+
+<Figure 
+    todoData={state.todos} 
+    heritageMutualiseTotal={state.heritageMutualiseTotal}
+    ratioPartDeces={state.ratioPartDeces}
+/>
+
   </div>
- </div>
-);
+ </div>)}
+</StateConsumer>
+)};

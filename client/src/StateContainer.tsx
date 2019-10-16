@@ -16,6 +16,8 @@ interface IState {
   heritageMutualiseTotal: number;
   heritageNet: IHeritage[];
   ratioPartDeces: number;
+  width:number;
+  height: number;
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -171,6 +173,7 @@ class StateContainer extends React.PureComponent<{}, IState> {
   constructor(state: IState){
     super(state);
     var ret: IReturn = updateHeritage(initialTodos, heritageBruteData)
+    
     this.state = {
       todos: initialTodos,
       trancheAdd: 0,
@@ -179,11 +182,25 @@ class StateContainer extends React.PureComponent<{}, IState> {
       heritageBrute: heritageBruteData,
       heritageNet: ret.heritageNet,
       heritageMutualiseTotal: ret.heritageMutualiseTotal,
-      ratioPartDeces: ratioPartDecesIni 
+      ratioPartDeces: ratioPartDecesIni,
+      width:0,
+      height:0
     };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this); 
   }
 
-  
+  componentDidMount() {
+  this.updateWindowDimensions();
+  window.addEventListener('resize', this.updateWindowDimensions);
+}
+
+  componentWillUnmount() {
+  window.removeEventListener('resize', this.updateWindowDimensions);
+}
+
+  updateWindowDimensions() {
+  this.setState({ width: window.innerWidth, height: window.innerHeight });
+}
   updateHeritageNet = () => {
       this.setState(state => {
           var ret: IReturn = updateHeritage(state.todos, state.heritageBrute)
@@ -219,9 +236,9 @@ class StateContainer extends React.PureComponent<{}, IState> {
       //we fist check if the entry is valid
       for (let olddo  of prevState.todos){
         if (olddo.taux === todo.taux) {entryOk = false;
-                                       errormessageloc = "il ne peut pas y avoir deux taux égaux"}
+                                       errormessageloc = "il ne peut pas y avoir deux taux �gaux"}
         if (olddo.tranche === todo.tranche) {entryOk = false;
-                                             errormessageloc = "il ne peut pas y avoir deux limites de tranche égales"}
+                                             errormessageloc = "il ne peut pas y avoir deux limites de tranche �gales"}
         if (olddo.tranche > todo.tranche && olddo.taux < todo.taux) 
             {entryOk = false;
              errormessageloc = "le taux doit croitre avec les tranche"};
