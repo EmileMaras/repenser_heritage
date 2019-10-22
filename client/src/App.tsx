@@ -9,11 +9,18 @@ import FigureDistribution from './FigureDistribution';
 function get_css_style_from_width(w:number){
   var name ="third-container"
   if (w<800){
-    name = "two-third-container"
+    name = "container"
   }
   return name
 }
 
+function get_css_style_from_width2(w:number){
+  var name ="two-third-container"
+  if (w<800){
+    name = "container"
+  }
+  return name
+}
 export default () => {
 
   
@@ -27,7 +34,7 @@ export default () => {
     <TodoInputContainer />
     <TodoListContainer />
   </div>
-  <div className="two-third-container">
+  <div className={get_css_style_from_width2(state.width)}>
     <h3>
     Visualisez les conséquences sur la distribution de l'héritage
     </h3>

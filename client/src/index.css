@@ -199,6 +199,15 @@ dl,
 table {
   margin: 0 0 1.5rem 0; }
 
+biblio ul {
+  clear: both;
+  list-style: none;
+  padding-left: 2%;
+}
+.biblio li {
+  margin: 1.5em 0;
+}
+
 ul li ul {
   margin-bottom: 0; }
 
@@ -808,3 +817,5 @@ code {
 .admin-link-active {
   border-bottom: #6f6e6e solid 2px;
 }
+
+
