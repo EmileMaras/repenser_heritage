@@ -56,7 +56,7 @@ class FigureDistribution extends React.Component<ITodos , {}> {
             ]}
         style={{ width: '100%', height: '40%' }}
         layout={{
-              autosize: true, title: "Distribution de l'héritage", 
+              autosize: true, title: "Distribution de l'héritage (1M = 1 million, 1k = 1000)", 
               xaxis: {fixedrange: true, range: [0, 100]},
               yaxis: {fixedrange: false, range: [0, 1400000],title: 'Montant héritage (€)'}
             }}

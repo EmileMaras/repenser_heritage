@@ -60,7 +60,7 @@ Il est nécessaire de repenser et de transformer les modes de transmission de l'
             </h4>
         
 La figure suivante représente une estimation de la distribution des héritages en France. 
-   <i> Lecture : 50% de la population française héritera de moins de 150 289 euros, 50% héritera de plus. </i>  
+   <i> Lecture : 50% de la population française héritera de moins de 150 289 euros, 50% héritera de plus (1M = un million, 1k = 1000). </i>  
 <FigureDistributionBrute />
   <div>     
 <b> Avertissement :</b> estimer la distribution de l'héritage est un exercice complexe. 
