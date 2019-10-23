@@ -63,7 +63,7 @@ class Figure extends React.Component<ITodos , {}> {
         ]}
         style={{ width: '100%', height: '40%' }}
         layout={{
-              autosize: true, title: 'Montant herité VS montant héritage filial brut'
+              autosize: true, title: 'Montant hérité VS montant héritage filial brut'
             }}
       />
     );

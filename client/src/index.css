@@ -374,6 +374,13 @@ dd {
   margin-left: auto;
   margin-right: auto; }
 
+.container-line-not {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 3px solid #0366EE; }  
+
 .small-container {
   max-width: 800px; }
 
@@ -748,19 +755,6 @@ code {
   color: white;
 }
 
-.header-logo {
-  animation: header-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-@keyframes header-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .header-title {
   font-size: 1em;
@@ -773,9 +767,13 @@ code {
   font-size: 1.5em;
 }
 
-/* .header-link-active { */
-/*   border-bottom: #ebebeb solid 2px; */
-/* } */
+.header-link-active { 
+  color: #0246a2;
+  text-decoration: underline; 	
+  padding: 40px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
 .product-list-item a {
   text-decoration: none;
