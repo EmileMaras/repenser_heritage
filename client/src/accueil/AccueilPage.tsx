@@ -95,9 +95,7 @@ On pourrait par exemple utiliser le principe de mutualisation-redistribution sui
 A chaque fois qu'une personne bénéficie d'un héritage par donation ou succession, 
 la valeur de l'héritage est estimée et le bénéficiaire doit s'acquiter d'un montant proportionnel à cette valeur selon un taux de mutualisation fixé légalement. 
 Ce taux de mutualisation dépend uniquement de la valeur cumulée de l'ensemble des héritages dont cette personne a bénéficiée au cours de sa vie et augmente progressivement par tranche.   
-Afin d'illustrer le principe, je propose les taux suivants.  Après un abattement de 100 000 euros, le taux sur les tranches supplémentaires augmenterait progressivement de 20% à 95% tel que présenté dans le tableau suivant (<i>le principe de  mutualisation par tranche peut être illustrée par l'exemple 
-<span title=" A 30 ans Paul bénéficie pour la première fois d'une donation de 80 000 euros. Ce montant étant inférieur à 100 000 euros, il ne contribue pas à la mutualisation et touche l'intégralité des 80 000 euros. Cinq ans plus tard, il bénéficie encore d'une donation de 80 000 euros brut. Le montant cumulé brut dont il a bénéficié est de 160 000 euros. Ce montant dépasse la première tranche de 60 000 euros. Il y a un taux de mutualisation de 20% dans cette tranche, il doit donc contribuer à la mutualisation de l'héritage à hauteur de 12 000 euros. Le montant net qu'il recevra suite à cette deuxième donation sera donc de 68 000 euros. Quelques années plus tard, il bénéficie d'une succession de 300 000 euros. Le montant cumulé qu'il avait perçu précédemment était de 160 000 euros. Il doit donc s'affranchir d'un taux de 20% sur 90 000 pour compléter la première tranche (fin de tranche à 250 000 euros), puis d'un taux de 40% sur les 210 000 euros suivant. Il doit donc contribuer à la mutualisation de l'héritage à hauteur de 90 000 x 0,2 + 210 000 x 0,4 = 91 200 euros."> <dt> suivant. </dt> </span>
-</i>) :
+Afin d'illustrer le principe, je propose les taux suivants.  Après un abattement de 100 000 euros, le taux sur les tranches supplémentaires augmenterait progressivement de 20% à 95% tel que présenté dans le tableau suivant :
    <div>     
     <div className="third-container-no-border">
       <table >
@@ -134,6 +132,10 @@ Afin d'illustrer le principe, je propose les taux suivants.  Après un abattemen
       </table>
     </div>
    </div>
+
+<i>Le principe de  mutualisation par tranche peut être illustré par cet exemple : 
+<span title=" A 30 ans Paul bénéficie pour la première fois d'une donation de 80 000 euros. Ce montant étant inférieur à 100 000 euros, il ne contribue pas à la mutualisation et touche l'intégralité des 80 000 euros. Cinq ans plus tard, il bénéficie encore d'une donation de 80 000 euros brut. Le montant cumulé brut dont il a bénéficié est de 160 000 euros. Ce montant dépasse la première tranche de 60 000 euros. Il y a un taux de mutualisation de 20% dans cette tranche, il doit donc contribuer à la mutualisation de l'héritage à hauteur de 12 000 euros. Le montant net qu'il recevra suite à cette deuxième donation sera donc de 68 000 euros. Quelques années plus tard, il bénéficie d'une succession de 300 000 euros. Le montant cumulé qu'il avait perçu précédemment était de 160 000 euros. Il doit donc s'affranchir d'un taux de 20% sur 90 000 pour compléter la première tranche (fin de tranche à 250 000 euros), puis d'un taux de 40% sur les 210 000 euros suivant. Il doit donc contribuer à la mutualisation de l'héritage à hauteur de 90 000 x 0,2 + 210 000 x 0,4 = 91 200 euros."> <dt> exemple </dt> </span>
+</i>
 Je précise également que cette contribution à la mutualisation remplace les taxes sur les successions et donations qui existent actuellement. 
 Afin de ne pas faire de trou dans le budget de l'État, un montant équivalent à ce qui est acutuellement perçu sur les taxes sur les donations et succession est prélevé par l'État dans la caisse nationale des héritages.
 L'argent ainsi récolté alimente la caisse nationale des héritages. 
