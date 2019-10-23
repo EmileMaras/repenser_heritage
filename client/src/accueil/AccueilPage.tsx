@@ -73,8 +73,7 @@ Néanmoins, cette distribution est, à ma connaissance, la plus fiable et permet
     <li> 10% de la population héritera de moins de 1100 euros </li>
     <li> 20% de la population héritera de moins de 13 000 euros </li>
     <li> 15% de la population héritera de plus de 622 000 euros ce qui correspond à plus que ce que touche un salarié rémunéré au SMIC sur l'ensemble d'une carrière de 45 ans. </li>
-    <li> Il n'y a pas de limite théorique au montant dont un individu peut hériter. On peut néanmoins estimer que chacun des enfants de Bernard Arnaud héritera d'environ 16 milliards d'euros. 
-AJOUTER UNE COMPARAISON.
+    <li> Il n'y a pas de limite théorique au montant dont un individu peut hériter. On peut néanmoins estimer que chacun des enfants de Bernard Arnaud héritera d'environ 16 milliards d'euros ce qui correspond à plus d'un million d'années de SMIC. Ainsi si tous les habitants de Paris (enfants et retraités compris) travaillaient rémunérés au SMIC, il faudrait qu'ils travaillent environ 6 mois pour toucher le même montant. 
     </li> 
     
   </ul>
