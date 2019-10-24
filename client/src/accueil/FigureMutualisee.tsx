@@ -51,7 +51,7 @@ class FigureDistribution extends React.Component {
           }        
 
             ]}
-        style={{ width: '75%', height: '40%' }}
+        style={{ width: 800, height: '40%' }}
         layout={{
               autosize: true, title: "Distribution de l'héritage", 
               xaxis: {fixedrange: true, range: [0, 100]},

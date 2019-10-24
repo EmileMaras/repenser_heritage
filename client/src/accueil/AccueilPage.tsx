@@ -97,7 +97,7 @@ la valeur de l'héritage est estimée et le bénéficiaire doit s'acquiter d'un 
 Ce taux de mutualisation dépend uniquement de la valeur cumulée de l'ensemble des héritages dont cette personne a bénéficiée au cours de sa vie et augmente progressivement par tranche.   
 Afin d'illustrer le principe, je propose les taux suivants.  Après un abattement de 100 000 euros, le taux sur les tranches supplémentaires augmenterait progressivement de 20% à 95% tel que présenté dans le tableau suivant :
    <div>     
-    <div className="third-container-no-border">
+    <div className="small-container">
       <table >
            <col width="70%"/>
            <col width="30%"/>

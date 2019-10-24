@@ -355,6 +355,13 @@ dd {
   float:center;
   max-width: 33%;
   padding: 0 1rem; }
+
+
+.small-container {
+  float:center;
+  width: 400px;
+  padding: 0 1rem; }
+
   
 .third-container {
   float:left;
