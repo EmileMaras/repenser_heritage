@@ -33,6 +33,8 @@ export default () => {
     </h3>
     <TodoInputContainer />
     <TodoListContainer />
+	Avec ce ratio il faudrait environ {Math.round(25/(state.ratioPartDeces-1))} années 
+	pour que l'âge limite auquel les citoyens peuvent toucher leur part d'héritage mutualisé soit de 25 ans.
   </div>
   <div className={get_css_style_from_width2(state.width)}>
     <h3>
