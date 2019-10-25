@@ -453,6 +453,10 @@ dd {
 .text-center {
   text-align: center; }
 
+.text-center-small {
+  text-align: center;
+  font-size: 12px; }
+
 .text-justify {
   text-align: justify; }
 

@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import {smic_annuel} from '../StateContainer';
 export interface IProps{
 	unit: string;
 	updateUnit: () => void;
@@ -13,6 +13,7 @@ const SwitchUnit: React.SFC<IProps> = props => {
 	}
 	else {text = "Visualisez en euros."}
 	return(
+	  <div>	
 		<div className="text-center">
            	<button 
                 type="button" 
@@ -21,6 +22,10 @@ const SwitchUnit: React.SFC<IProps> = props => {
             {text}
             </button>		
 		</div>
+		<div className="text-center-small">
+En se basant sur un SMIC mensuel net de {smic_annuel/12} euros, une année de SMIC vaut {smic_annuel} euros.		
+		</div>
+	  </div>
 	)
 	
 	
