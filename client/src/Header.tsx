@@ -43,6 +43,13 @@ const Header: React.SFC<RouteComponentProps> = props => {
         >
           Bibliographie
         </NavLink>
+        <NavLink
+          to="/contact"
+          className="header-link"
+          activeClassName="header-link-active"
+        >
+          Contact
+        </NavLink>
       </nav>
     </header>
   );
