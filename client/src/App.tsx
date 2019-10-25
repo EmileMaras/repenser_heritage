@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StateConsumer } from './StateContainer';
 
 import TodoListContainer from './TodoListContainer';
+import SwitchUnitContainer from './simulation/SwitchUnitContainer';
 import TodoInputContainer from './TodoInputContainer';
 import Figure from './Figure';
 import FigureDistribution from './FigureDistribution';
@@ -42,6 +43,7 @@ export default () => {
     </h3>
 
         <div>
+		<SwitchUnitContainer/>
          <h5> 
          - Une part d'héritage mutualisé serait  
          de {Math.round(state.heritageMutualiseTotal / state.ratioPartDeces)} euros.

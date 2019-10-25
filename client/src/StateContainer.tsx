@@ -18,6 +18,7 @@ interface IState {
   ratioPartDeces: number;
   width:number;
   height: number;
+  unit: string;
 }
 
 // Define the shape of the context. This is what gets consumed by components
@@ -31,6 +32,7 @@ interface IContext {
     addTodo: () => void;
     deleteTodo: (id: number) => void;
     changeRatio: (ratio: number) => void;
+    updateUnit: () => void;
   };
 }
 
@@ -184,7 +186,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
       heritageMutualiseTotal: ret.heritageMutualiseTotal,
       ratioPartDeces: ratioPartDecesIni,
       width:0,
-      height:0
+      height:0,
+	  unit: "euros"	
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this); 
   }
@@ -286,7 +289,19 @@ class StateContainer extends React.PureComponent<{}, IState> {
     this.setState({ tauxAdd: taux });
   };
     
-    
+  updateUnit = () => {
+      this.setState(state => {
+		  if (state.unit == "euros"){
+			this.setState({unit: "SMIC"})
+		  }
+		  else {this.setState({unit: "euros"})}	
+          var ret: IReturn = updateHeritage(state.todos, state.heritageBrute)
+          this.setState({heritageNet: ret.heritageNet,
+                         heritageMutualiseTotal: ret.heritageMutualiseTotal
+          })
+      })	
+  }
+
   render() {
     // Build the context object with the cotainer state and all the
     // implementations of the selectors and actions.
@@ -297,7 +312,8 @@ class StateContainer extends React.PureComponent<{}, IState> {
         addTodo: this.addTodo,
         changeAddEntry: this.changeAddEntry,
         changeAddTaux: this.changeAddTaux,
-        changeRatio: this.changeRatio
+        changeRatio: this.changeRatio,
+		updateUnit: this.updateUnit
       }
     };
 
