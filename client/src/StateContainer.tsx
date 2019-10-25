@@ -67,6 +67,8 @@ export const heritageBruteData = [
 // Calculate the last ID in the todoList for use in generating new IDs.
 let nextId = Math.max(...initialTodos.map(t => t.id)) + 1;
 
+export const smic_annuel:number = 1175*12;
+
 export interface IReturn {
     heritageMutualiseTotal: number,
     heritageNet: IHeritage[]

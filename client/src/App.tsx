@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StateConsumer } from './StateContainer';
+import { StateConsumer, smic_annuel } from './StateContainer';
 
 import TodoListContainer from './TodoListContainer';
 import SwitchUnitContainer from './simulation/SwitchUnitContainer';
@@ -27,7 +27,17 @@ export default () => {
   
   return (
 <StateConsumer>
-{({state, actions }) => (<div>
+{({state, actions }) => {
+   var textpart: string
+   var heritage_euros: number = Math.round(state.heritageMutualiseTotal / state.ratioPartDeces);
+   var heritage_smic: number = Math.round(heritage_euros/smic_annuel * 100)/100
+   if (state.unit == "euros"){
+	textpart = " de " + heritage_euros.toString() + " euros."
+   }
+   else {
+	textpart = " équivalent à  " + heritage_smic.toString() + " années de SMIC."
+   }
+   return (<div>
   <div className={get_css_style_from_width(state.width)}>
     <h3>
     Choisissez les taux de mutualisation
@@ -46,7 +56,7 @@ export default () => {
 		<SwitchUnitContainer/>
          <h5> 
          - Une part d'héritage mutualisé serait  
-         de {Math.round(state.heritageMutualiseTotal / state.ratioPartDeces)} euros.
+         {textpart}
          </h5>
          <h5>
          - A l'échelle nationale, l'héritage mutualisé 
@@ -70,6 +80,6 @@ export default () => {
 />
 
   </div>
- </div>)}
+ </div>)}}
 </StateConsumer>
 )};
