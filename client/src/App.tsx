@@ -69,6 +69,7 @@ export default () => {
 <FigureDistribution 
    hBrute={state.heritageBrute} 
    hNet={state.heritageNet} 
+   unit={state.unit}
    hMut={state.heritageMutualiseTotal} 
    ratioPartDeces={state.ratioPartDeces}
 />

@@ -63,7 +63,9 @@ class Figure extends React.Component<ITodos , {}> {
         ]}
         style={{ width: '100%', height: '40%' }}
         layout={{
-              autosize: true, title: 'Montant hérité VS montant héritage filial brut'
+              autosize: true, title: 'Hérité net reçu VS héritage filial brut (1k = 1000, 1M = un million)',
+			  xaxis: {title: "Héritage filial brut (€)"},
+			  yaxis: {title: "Héritage reçu net (€)"}
             }}
       />
     );
