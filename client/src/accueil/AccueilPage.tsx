@@ -11,7 +11,7 @@ class AccueilPage extends React.Component {
         return(
         <div className="blocktext">
             <h3>
-            Repensons (les modes de transmission de) l'héritage?
+            Repensons (les modes de transmission de) l'héritage
             </h3>
 Cette page fait un résumé des inégalités résultant du mode actuel de transmission de l'héritage et présente le principe d'une mutualisation partielle de l'héritage.
 Pour des informations plus détaillées (incluant notamment les références) veuillez télécharger le document suivant:
@@ -137,7 +137,7 @@ Afin d'illustrer le principe, je propose les taux suivants.  Après un abattemen
 <span title=" A 30 ans Paul bénéficie pour la première fois d'une donation de 80 000 euros. Ce montant étant inférieur à 100 000 euros, il ne contribue pas à la mutualisation et touche l'intégralité des 80 000 euros. Cinq ans plus tard, il bénéficie encore d'une donation de 80 000 euros brut. Le montant cumulé brut dont il a bénéficié est de 160 000 euros. Ce montant dépasse la première tranche de 60 000 euros. Il y a un taux de mutualisation de 20% dans cette tranche, il doit donc contribuer à la mutualisation de l'héritage à hauteur de 12 000 euros. Le montant net qu'il recevra suite à cette deuxième donation sera donc de 68 000 euros. Quelques années plus tard, il bénéficie d'une succession de 300 000 euros. Le montant cumulé qu'il avait perçu précédemment était de 160 000 euros. Il doit donc s'affranchir d'un taux de 20% sur 90 000 pour compléter la première tranche (fin de tranche à 250 000 euros), puis d'un taux de 40% sur les 210 000 euros suivant. Il doit donc contribuer à la mutualisation de l'héritage à hauteur de 90 000 x 0,2 + 210 000 x 0,4 = 91 200 euros."> <dt> exemple </dt> </span>
 </i>
 Je précise également que cette contribution à la mutualisation remplace les taxes sur les successions et donations qui existent actuellement. 
-Afin de ne pas faire de trou dans le budget de l'État, un montant équivalent à ce qui est acutuellement perçu sur les taxes sur les donations et succession est prélevé par l'État dans la caisse nationale des héritages.
+Afin de ne pas faire de trou dans le budget de l'État, un montant équivalent à ce qui est acutuellement perçu par les taxes sur les donations et succession est prélevé par l'État dans la caisse nationale des héritages.
 L'argent ainsi récolté alimente la caisse nationale des héritages. 
 
         <h5> Redistribution</h5>

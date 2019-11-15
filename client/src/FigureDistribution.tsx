@@ -72,7 +72,7 @@ class FigureDistribution extends React.Component<ITodos , {}> {
         style={{ width: '100%', height: '40%' }}
         layout={{
               autosize: true, title: titre_figure, 
-              xaxis: {fixedrange: true, range: [0, 100]},
+              xaxis: {fixedrange: true, range: [0, 100], title: "pourcentage de la population <br>(classée de ceux qui recevront le plus petit héritage <br>à ceux qui recevront le plus gros)"},
               yaxis: {fixedrange: false, range: [0, 1400000/ratio],title: yaxis_title}
             }}
       />
