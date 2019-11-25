@@ -73,7 +73,7 @@ Néanmoins, cette distribution est, à ma connaissance, la plus fiable et permet
     <li> 10% de la population héritera de moins de 1100 euros </li>
     <li> 20% de la population héritera de moins de 13 000 euros </li>
     <li> 15% de la population héritera de plus de 622 000 euros ce qui correspond à plus que ce que touche un salarié rémunéré au SMIC sur l'ensemble d'une carrière de 45 ans. </li>
-    <li> Il n'y a pas de limite théorique au montant dont un individu peut hériter. On peut néanmoins estimer que chacun des enfants de Bernard Arnaud héritera d'environ 16 milliards d'euros ce qui correspond à plus d'un million d'années de SMIC. Ainsi si tous les habitants de Paris (enfants et retraités compris) travaillaient rémunérés au SMIC, il faudrait qu'ils travaillent environ 6 mois pour toucher le même montant. 
+    <li> Il n'y a pas de limite théorique au montant dont un individu peut hériter. On peut néanmoins estimer que chacun des enfants de Bernard Arnaud héritera d'environ 14,5 milliards d'euros nets ce qui correspond à près d'un million d'années de SMIC. Ainsi si tous les habitants de Paris (enfants et retraités compris) travaillaient rémunérés au SMIC, il faudrait qu'ils travaillent environ 6 mois pour toucher le même montant. 
     </li> 
     
   </ul>
@@ -137,13 +137,13 @@ Afin d'illustrer le principe, je propose les taux suivants.  Après un abattemen
 <span title=" A 30 ans Paul bénéficie pour la première fois d'une donation de 80 000 euros. Ce montant étant inférieur à 100 000 euros, il ne contribue pas à la mutualisation et touche l'intégralité des 80 000 euros. Cinq ans plus tard, il bénéficie encore d'une donation de 80 000 euros brut. Le montant cumulé brut dont il a bénéficié est de 160 000 euros. Ce montant dépasse la première tranche de 60 000 euros. Il y a un taux de mutualisation de 20% dans cette tranche, il doit donc contribuer à la mutualisation de l'héritage à hauteur de 12 000 euros. Le montant net qu'il recevra suite à cette deuxième donation sera donc de 68 000 euros. Quelques années plus tard, il bénéficie d'une succession de 300 000 euros. Le montant cumulé qu'il avait perçu précédemment était de 160 000 euros. Il doit donc s'affranchir d'un taux de 20% sur 90 000 pour compléter la première tranche (fin de tranche à 250 000 euros), puis d'un taux de 40% sur les 210 000 euros suivant. Il doit donc contribuer à la mutualisation de l'héritage à hauteur de 90 000 x 0,2 + 210 000 x 0,4 = 91 200 euros."> <dt> exemple </dt> </span>
 </i>
 Je précise également que cette contribution à la mutualisation remplace les taxes sur les successions et donations qui existent actuellement. 
-Afin de ne pas faire de trou dans le budget de l'État, un montant équivalent à ce qui est acutuellement perçu par les taxes sur les donations et succession est prélevé par l'État dans la caisse nationale des héritages.
-L'argent ainsi récolté alimente la caisse nationale des héritages. 
+Afin de ne pas faire de trou dans le budget de l'État, un montant équivalent à ce qui est actuellement perçu par les taxes sur les donations et succession est prélevé par l'État.
+Le reste de l'argent ainsi récolté alimente la caisse nationale des héritages. 
 
         <h5> Redistribution</h5>
 A la fin de chaque année fiscale, l'argent ainsi accumulé est divisé en parts et redistribué. 
 Le nombre de parts distribuées est proportionnel au nombre de décès. 
-Chaque citoyen peut à partir de sa majorité demander quand il le souhaite à toucher sa part d'héritage. Il ne peut toucher qu'une seule part au court de sa vie. Il peut demander à toucher sa part intégralement en une fois ou il peut demander à la toucher en plusieurs fois.
+Chaque citoyen peut à partir de sa majorité demander quand il le souhaite à toucher sa part d'héritage. Il ne peut toucher qu'une seule part au cours de sa vie. Il peut demander à toucher sa part intégralement en une fois ou il peut demander à la toucher en plusieurs fois.
 
 A la mise en place d'une telle réforme, la majorité des citoyens n'ont pas encore touché leur part d'héritage. 
 Il y aurait donc initialement bien plus de demandeurs que de parts disponibles. 

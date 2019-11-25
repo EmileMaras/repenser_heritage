@@ -39,6 +39,11 @@ class Biblio extends React.Component {
    Thomas Piketty (Éditions du Seuil, 2019)
   </li>
 
+  <li> 
+    <b> <a href="http://www.toupie.org/Textes/Abolition_droit_heritage.htm">Le plafonnement de l'héritage </a> </b> <br></br>
+  	La Toupie
+  </li>
+
   </ul>
  </div>
 
