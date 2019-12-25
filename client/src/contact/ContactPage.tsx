@@ -17,7 +17,6 @@ class ContactPage extends React.Component {
 
   Si pour l'instant, je milite principalement seul, je serais heureux d'être rejoint par d'autre militants. N'hésitez pas à me contacter si vous voulez vous investir avec moi.
   <br/> <br/>
-  Je prépare également une conférence spectacle intitulée "repensons l'héritage". Je peux la jouer bénévolement à la demande.
   <h4>
   contact :
   </h4> 
