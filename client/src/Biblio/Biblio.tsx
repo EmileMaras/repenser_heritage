@@ -1,6 +1,7 @@
 import * as React from "react";
 import axios from "axios";
 
+
 class Biblio extends React.Component {
 
   render() {
@@ -60,7 +61,6 @@ Faut-il abolir l'héritage ?</a> </b> <br></br>
 
   </ul>
  </div>
-
 </div>
     );
   }

@@ -19,6 +19,7 @@ import NotFoundPage from "./NotFoundPage";
 import AccueilPage from "./accueil/AccueilPage";
 import Biblio from "./Biblio/Biblio";
 import Contact from "./contact/ContactPage";
+import Conference from "./Conference/Conference"
 
 const RoutesWrap: React.SFC = () => {
   return (
@@ -43,6 +44,7 @@ const Routes: React.SFC<RouteComponentProps> = props => {
             <Redirect exact={true} from="/" to="/accueil" />
             <Route exact={true} path="/simulation" component={SimulationPage} />
             <Route exact={true} path="/accueil" component={AccueilPage} />
+			<Route exact={true} path="/conference" component={Conference} />
             <Route exact={true} path="/biblio" component={Biblio} />
 			<Route exact={true} path="/contact" component={Contact} />
             <Route component={NotFoundPage} />
