@@ -61,6 +61,20 @@ Faut-il abolir l'héritage ?</a> </b> <br></br>
 
   </ul>
  </div>
+
+  <h4> Au delà de l'héritage :</h4>
+
+ <div className="biblio">
+
+  <ul>
+  <li> 
+    <b><a href="https://www.youtube.com/watch?v=p9H0BSQjnNQ&t=3s">
+La monnaie libre</a> </b> <br></br>
+  Le brice (chaîne youtube)
+  </li>
+
+  </ul>
+ </div>
 </div>
     );
   }
