@@ -13,6 +13,7 @@ import {
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Header from "./Header";
+import HeaderMobile from "./HeaderMobile"
 const AdminPage = React.lazy(() => import("./AdminPage"));
 import SimulationPage from "./SimulationPage";
 import NotFoundPage from "./NotFoundPage";
@@ -33,7 +34,7 @@ const Routes: React.SFC<RouteComponentProps> = props => {
   const [loggedIn, setLoggedIn] = React.useState(true);
   return (
     <div>
-      <Header />
+      <HeaderMobile />
       <TransitionGroup>
         <CSSTransition
           key={props.location.key}
