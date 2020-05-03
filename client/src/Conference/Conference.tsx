@@ -11,9 +11,7 @@ class Conference extends React.Component {
 	videoId="DC1DL7cRGco"
   />
 
-Cette conférence est en court d'écriture et est amenée à évoluer. 
-J'aimerais collaborer avec des professionnels de la culture afin de rendre cette conférence aussi plaisante et didactique que possible.
-Si vous êtes acteur ou metteure en scène et que cela vous intéresse, n'hésitez pas à me contacter.
+Cette conférence est en court d'écriture et est amenée à évoluer. J'aimerais collaborer avec des professionnel·le·s de la culture afin de rendre cette conférence aussi plaisante et didactique que possible. Si vous êtes acteur·rice ou metteur·se en scène et que cela vous intéresse, n'hésitez pas à me contacter.
 <br/><br/>
 Je peux aussi jouer la conférence bénévolement à la demande. 
 </div>

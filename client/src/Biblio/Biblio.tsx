@@ -41,6 +41,11 @@ class Biblio extends React.Component {
   </li>
 
   <li> 
+    <b> Le genre du capital </b> <br></br>
+   Céline Bessière, Sibylle Gollac (Éditions La découverte, 2020)
+  </li>
+
+  <li> 
     <b> <a href="http://www.toupie.org/Textes/Abolition_droit_heritage.htm">Le plafonnement de l'héritage </a> </b> <br></br>
   	La Toupie
   </li>
@@ -58,6 +63,13 @@ class Biblio extends React.Component {
 Faut-il abolir l'héritage ?</a> </b> <br></br>
   Entendez vous l'éco ? (France Culture 2019)
   </li>
+
+
+  <li> 
+    <b><a href="https://soundcloud.com/lescouilles-podcast/le-patrimoine-enjeu-capital">Le patrimoine, enjeu capital</a> </b> <br></br>
+  Les couilles sur la table (2020)
+  </li>
+
 
   </ul>
  </div>

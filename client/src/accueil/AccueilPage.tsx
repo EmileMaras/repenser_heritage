@@ -46,11 +46,11 @@ En France, les taxes sur les successions et sur les donations sont en moyenne in
             </h4>
 Il est nécessaire de repenser et de transformer les modes de transmission de l'héritage car :
 <ul>
-  <li> l'héritage est important dans la vie des citoyens français : il représente en moyenne environ 20 % de leur revenu total</li>
+  <li> l'héritage est important dans la vie des citoyen·ne·s français·es : il représente en moyenne environ 20 % de leur revenu total</li>
   <li> le mode actuel de transmission de l'héritage présente deux défauts majeurs :
     <ul>
   <li> l'héritage est très inégalement redistribué. <i> Voir la section suivante </i></li>
-  <li> les citoyens bénéficient de leur héritage relativement tard dans leur vie : l'âge moyen auquel les français touchent une succession est d'environ 50 ans </li>
+  <li> les citoyen·ne·s bénéficient de leur héritage relativement tard dans leur vie : l'âge moyen auquel les français·es touchent une succession est d'environ 50 ans</li>
     </ul>
   </li>
   <li> des alternatives sont possibles</li> 
@@ -72,8 +72,8 @@ Néanmoins, cette distribution est, à ma connaissance, la plus fiable et permet
   <ul>
     <li> 10% de la population héritera de moins de 1100 euros </li>
     <li> 20% de la population héritera de moins de 13 000 euros </li>
-    <li> 15% de la population héritera de plus de 622 000 euros ce qui correspond à plus que ce que touche un salarié rémunéré au SMIC sur l'ensemble d'une carrière de 45 ans. </li>
-    <li> Il n'y a pas de limite théorique au montant dont un individu peut hériter. On peut néanmoins estimer que chacun des enfants de Bernard Arnaud héritera d'environ 14,5 milliards d'euros nets ce qui correspond à près d'un million d'années de SMIC. Ainsi si tous les habitants de Paris (enfants et retraités compris) travaillaient rémunérés au SMIC, il faudrait qu'ils travaillent environ 6 mois pour toucher le même montant. 
+    <li> 15% de la population héritera de plus de 622 000 euros ce qui correspond à plus que ce que touche un·e salarié·e rémunéré·e au SMIC sur l'ensemble d'une carrière de 45 ans. </li>
+    <li> Il n'y a pas de limite théorique au montant dont un individu peut hériter. On peut néanmoins estimer que chacun des enfants de Bernard Arnaud héritera d'environ 14,5 milliards d'euros nets ce qui correspond à près d'un million d'années de SMIC. Ainsi si tous les habitant·e·s de Paris (enfants et retraité·e·s compris) travaillaient rémunérés au SMIC, il faudrait qu'ils travaillent environ 6 mois pour toucher le même montant. 
     </li> 
     
   </ul>
@@ -82,7 +82,11 @@ Les inégalités présentées précédemment sont amplifiées par les facteurs s
     <li> en moyenne, plus une personne bénéficie d'un héritage conséquent plus son salaire est important. Cela s'explique en partie par le fait que les personnes qui transmettent un héritage important à leurs enfants ont généralement été en mesure de les aider financièrement pendant leurs études.</li>
     <li> un héritage peut rapporter un revenu fixe. Quelqu'un qui hérite d'un appartement peut par exemple le louer et en obtenir un revenu.</li>
     
-  </ul>          
+  </ul>
+
+
+  On peut également mentionner que l'héritage <a href="https://soundcloud.com/lescouilles-podcast/le-patrimoine-enjeu-capital">contribue actuellement aux inégalités entre hommes et femmes</a>.
+
 
             <h4>
             Et si on mutualisait une partie de l'héritage?    
@@ -141,34 +145,20 @@ Afin de ne pas faire de trou dans le budget de l'État, un montant équivalent �
 Le reste de l'argent ainsi récolté alimente la caisse nationale des héritages. 
 
         <h5> Redistribution</h5>
-A la fin de chaque année fiscale, l'argent ainsi accumulé est divisé en parts et redistribué. 
-Le nombre de parts distribuées est proportionnel au nombre de décès. 
-Chaque citoyen peut à partir de sa majorité demander quand il le souhaite à toucher sa part d'héritage. Il ne peut toucher qu'une seule part au cours de sa vie. Il peut demander à toucher sa part intégralement en une fois ou il peut demander à la toucher en plusieurs fois.
-
-A la mise en place d'une telle réforme, la majorité des citoyens n'ont pas encore touché leur part d'héritage. 
-Il y aurait donc initialement bien plus de demandeurs que de parts disponibles. 
-Les demandeurs sont sélectionnés en commencant par les plus âgés jusqu'à ce que toutes les parts disponibles soient distribuées.
-Les demandeurs restants ne peuvent pas toucher leur part d'héritage cette année là et doivent renouveler leur demande ultérieurement.
-        
-Afin de faire dimininuer progressivement l'âge moyen auquel les citoyens peuvent toucher leur part d'héritage mutualisé, 
-le nombre de parts distribuées serait initialement supérieur au nombre de décès. 
-On peut par exemple fixer le nombre de parts à 1,5 fois le nombre de décès ce qui permet de faire dimininuer chaque année 
-        d'environ 6 mois l'âge moyen auquel les citoyens peuvent toucher leur part d'héritage mutualisé. 
-
-A long terme, pour une population stable, il y aurait en moyenne autant de demandeurs que de décès et il y aurait autant de parts distribuées que de demandeurs.
+A la fin de chaque année fiscale, l'argent ainsi accumulé est divisé en parts et redistribué. Le nombre de parts distribuées est proportionnel au nombre de décès. Chaque citoyen·ne peut à partir de sa majorité demander quand il ou elle le souhaite à toucher sa part d'héritage en une ou plusieurs fois. Il ou elle ne peut toucher qu'une seule part au cours de sa vie. A la mise en place d'une telle réforme, la majorité des citoyen·ne·s n'ont pas encore touché leur part d'héritage. Il y aurait donc initialement bien plus de demandeur·se·s que de parts disponibles. Les demandeur·se·s sont sélectionnés en commencant par les plus âgé·e·s jusqu'à ce que toutes les parts disponibles soient distribuées. Les demandeur·se·s restant·e·s ne peuvent pas toucher leur part d'héritage cette année là et doivent renouveler leur demande ultérieurement. Afin de faire dimininuer progressivement l'âge moyen auquel les citoyen·ne·s peuvent toucher leur part d'héritage mutualisé, le nombre de parts distribuées serait initialement supérieur au nombre de décès. On peut par exemple fixer le nombre de parts à 1,5 fois le nombre de décès ce qui permet de faire dimininuer chaque année d'environ 6 mois l'âge moyen auquel les citoyen·ne·s peuvent toucher leur part d'héritage mutualisé. A long terme, pour une population stable, il y aurait en moyenne autant de demandeur·se·s que de décès et il y aurait autant de parts distribuées que de demandeur·se·s.
 
 
 <h5> Conséquences sur la distribution de l'héritage </h5>
 La figure suivante présente la distribution actuelle de l'héritage (rouge) ainsi que celle résultant d'une telle réforme (bleu).
 Avec les taux de mutualisation proposés, l'héritage mutualisé représenterait environ 50% de l'héritage total.
 On estime qu'une part d'héritage mutualisée serait d'environ 130 000 euros. 
-Cette réforme serait bénéficiaire pour plus de 80% des citoyens (puisque la valeur d'une part d'héritage mutualisée serait plus importante que leur contribution à la mutualisation).
+Cette réforme serait bénéficiaire pour plus de 80% des citoyen·ne·s (puisque la valeur d'une part d'héritage mutualisée serait plus importante que leur contribution à la mutualisation).
 <FigureDistribution />        
 
 <h5> Fixons collectivement les taux de mutualisation</h5> 
 
 Il y a deux aspirations fondamentales et antagonistes face au choix du mode de transmission de l'héritage.
-Il y a d'un côté une aspiration au maintien du patrimoine dans le cercle familial et de l'autre une aspiration à l'égalité entre citoyens. Nous sommes actuellement dans un système qui favorise très largement la première aspiration au détriment de la deuxième. 
+Il y a d'un côté une aspiration au maintien du patrimoine dans le cercle familial et de l'autre une aspiration à l'égalité entre citoyen·ne·s. Nous sommes actuellement dans un système qui favorise très largement la première aspiration au détriment de la deuxième. 
 En ajustant les taux de mutualisation on peut trouver un "équilibre" entre ces deux aspirations.
 Les taux que j'ai proposés ici permettent selon moi d'avoir un tel équilibre, mais personne n'a la légitimité de fixer seul cet équilibre.                 
 Il est nécessaire d'avoir un débat afin de fixer collectivement les taux de mutualisation.

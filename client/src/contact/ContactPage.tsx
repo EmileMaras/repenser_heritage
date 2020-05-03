@@ -15,7 +15,7 @@ class ContactPage extends React.Component {
   De formation scientifique, je suis actuellement développeur informatique. Je ne suis affilié à aucun parti politique ou syndicat.
   <br/><br/>
 
-  Si pour l'instant, je milite principalement seul, je serais heureux d'être rejoint par d'autre militants. N'hésitez pas à me contacter si vous voulez vous investir avec moi.
+  Si pour l'instant, je milite principalement seul, je serais heureux d'être rejoint par d'autre militant·e·s. N'hésitez pas à me contacter si vous voulez vous investir avec moi.
   <br/> <br/>
   <h4>
   contact :
