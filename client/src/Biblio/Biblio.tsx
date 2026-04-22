@@ -19,7 +19,14 @@ class Biblio extends React.Component {
     <b> Les nouveaux héritiers </b> <br></br>
   Nicolas Frémeaux (La république des idées, 2018)
   </li>
-
+  <li> 
+    <b><a href="http://heritage-pour-tous.fr">Un simulateur de réforme fiscale, basé sur les travaux du CAE "Repenser l'héritage" </a> </b> <br></br>
+  Raphaël Jolivet
+  </li>
+  <li> 
+    <b><a href="https://cae-eco.fr/repenser-lheritage.">Travaux du CAE "Repenser l'héritage" </a> </b> <br></br>
+  Clément Dherbécourt, Gabrielle Fack, Camille Landais et Stefanie Statcheva (Conseil d'analyse économique, 2021)
+  </li>
   <li> 
     <b> L'héritage </b> <br></br>
   Anne Gotman (Que sais-je ? Presses Universitaires de France, 2006)

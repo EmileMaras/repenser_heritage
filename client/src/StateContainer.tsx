@@ -106,21 +106,9 @@ export function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IRet
         trancheN = 200000000000000000000
     }
     while (hBruteN > trancheN) {
-        xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL); 
-        console.log("coucou2")  
-        console.log("heritageMutualiseTotalBefore " + heritageMutualiseTotal )
-        heritageMutualiseTotal += (xNext - heritagePrev.x) / 100 * 
+        xNext = xBruteL + (xBruteN - xBruteL) * (trancheN - hBruteL) / (hBruteN - hBruteL);
+        heritageMutualiseTotal += (xNext - heritagePrev.x) / 100 *
             (contrDebutTranche + (hBruteL + trancheN - 2 * trancheL) / 2 * tauxL / 100);
-        console.log((xNext - heritagePrev.x))
-        console.log("xNext             " + xNext)      
-        console.log("heritagePrev.x    " + heritagePrev.x)
-        console.log("heritagePrev.h    " + heritagePrev.h)
-        console.log("contrDebutTranche " + contrDebutTranche)
-        console.log("hBruteL           " + hBruteL)
-        console.log("hBruteN           " + hBruteN)
-        console.log("trancheL          " + trancheL)
-        console.log("tauxL             " + tauxL)
-        console.log("heritageMutualiseTotal " + heritageMutualiseTotal )
         contrDebutTranche += (trancheN - trancheL) * tauxL / 100;
         hNext = trancheN - contrDebutTranche;
         heritageNew.push({x: xNext, h: hNext});
@@ -139,19 +127,9 @@ export function updateHeritage(todos: ITodo[], heritageBrute: IHeritage[]): IRet
     }
     xNext = xBruteN;
     
-    heritageMutualiseTotal += (xNext - heritagePrev.x) * 
+    heritageMutualiseTotal += (xNext - heritagePrev.x) *
         (contrDebutTranche + (hBruteL + hBruteN - 2 * trancheL) / 2 * tauxL / 100) / 100;
-    console.log("coucou")   
-    console.log("xNext             " + xNext)      
-    console.log("heritagePrev.x    " + heritagePrev.x)
-    console.log("heritagePrev.h    " + heritagePrev.h)
-    console.log("contrDebutTranche " + contrDebutTranche)
-    console.log("hBruteN           " + hBruteN)
-    console.log("trancheL          " + trancheL)
-    console.log("tauxL             " + tauxL)
-    console.log("heritageMutualiseTotal " + heritageMutualiseTotal )
     hNext = hBruteN - contrDebutTranche - (hBruteN - trancheL) * tauxL / 100;
-    console.log("hNext             " + hNext)
         
     heritageNew.push({x: xNext, h: hNext});
     iHeritageBrute ++;
@@ -235,7 +213,6 @@ class StateContainer extends React.PureComponent<{}, IState> {
         tranche: this.state.trancheAdd,
         taux: this.state.tauxAdd,
       };
-      console.log("coucou")      
       var entryOk = true;
       var errormessageloc = " "
       //we fist check if the entry is valid

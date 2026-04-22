@@ -1,16 +1,24 @@
 const express = require("express");
 const app = express();
 const fs = require("fs");
+const path = require("path");
 const port = process.env.PORT || 4000;
 const cors = require("cors");
-app.use(cors());
-// Pdf route that will serve pdf
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(",")
+  : [];
+app.use(cors({ origin: allowedOrigins }));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.get("/pdf", (req, res) => {
-  var file = fs.createReadStream("./RepenserLHeritage.pdf");
+  var file = fs.createReadStream(path.join(__dirname, "RepenserLHeritage.pdf"));
   file.pipe(res);
 });
-// console.log that your server is up and running
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 
